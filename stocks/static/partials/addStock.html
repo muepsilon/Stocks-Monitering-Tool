@@ -1,0 +1,75 @@
+<div class="col-xs-12 operations" ng-show = "vm.stock_operation == 'add'">
+  <div class="col-xs-12 add-options">
+    <div class="col-xs-3 col-xs-offset-3">
+      <label><input type="radio" ng-model="vm.addOption" value="new">  Add New Stock</label>
+    </div>
+    <div class="col-xs-6">
+      <label><input type="radio" ng-model="vm.addOption" value="existing">  Add to Existing</label>
+    </div>
+  </div>
+  <div class="col-xs-12" ng-show="vm.addOption == 'new'">
+    <form class="form-horizontal" name="addStock" ng-submit="vm.addStock()" >
+      <hide-dropdowns isvisible="dropdown.search"></hide-dropdowns>
+      <div class="form-group">
+        <label for="companyName" class="col-sm-2 control-label">Company Name</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="companyName"  required ng-model="vm.formdata.company_name" ng-keydown="vm.searchSuggestion()" autocomplete="off">
+          <div class="col-xs-12" style="padding: 0;">
+            <div class="col-xs-12 search-suggestion" ng-show="vm.showSearchSuggetsion()">
+              <ul>
+                <li ng-repeat="item in vm.companySuggestion" ng-click="vm.selectCompany(item)">
+                  <span>{{item.name}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="symbol" class="col-sm-2 control-label">Symbol</label>
+        <div class="col-sm-7"><input type="text" class="form-control" id="symbol" readonly ng-model="vm.formdata.symbol"></div>
+      </div>
+      <div class="form-group">
+        <label for="investedPrice" class="col-sm-2 control-label">Invested Price</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="investedPrice" required ng-model="vm.formdata.invested_price"></div>
+      </div>
+      <div class="form-group">
+        <label for="N_stocks" class="col-sm-2 control-label">No of Stocks</label>
+        <div class="col-sm-7"><input type="number" step="1" class="form-control" id="N_stocks" required ng-model="vm.formdata.N_stocks"></div>
+      </div>
+      <div class="form-group">
+        <label for="targetPrice" class="col-sm-2 control-label">Target Price</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="targetPrice" required ng-model="vm.formdata.target_price"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceHigh" class="col-sm-2 control-label">Trigger Price(High)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="triggerPriceHigh" required ng-model="vm.formdata.trigger_price_high"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceLow" class="col-sm-2 control-label">Trigger Price(Low)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="investedPriceLow" required ng-model = "vm.formdata.trigger_price_low"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+
+  <div class="col-xs-12" ng-show="vm.addOption == 'existing'">
+    <div class="col-xs-2" style="font-weight:bold; line-height:2em;">Select Company</div>
+    <div class="col-xs-10" ng-include="'static/partials/selectStock.html'" ></div>
+    <form class="form-horizontal" name="addToExisting" ng-submit="vm.addToExisting()">
+      <div class="form-group">
+        <label for="investedPrice" class="col-sm-2 control-label">Invested Price</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" required ng-model="vm.formdata.invested_price"></div>
+      </div>
+      <div class="form-group">
+        <label for="N_stocks" class="col-sm-2 control-label">No of Stocks</label>
+        <div class="col-sm-7"><input type="number" step="1" class="form-control" required ng-model="vm.formdata.N_stocks"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+
+  <div class="col-xs-12">
+    <button class="btn btn-default" ng-click="vm.stock_operation = ''">Clear</button>
+  </div>
+</div>

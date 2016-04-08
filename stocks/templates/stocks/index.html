@@ -1,0 +1,16 @@
+{% load staticfiles  %}
+<html>
+<head>
+  <title>Portfolio</title>
+  {% include "stocks/stylesheets.html" %}
+</head>
+<body ng-app="stockWatch">
+
+  <div class="col-xs-12 header">
+    <div class="col-xs-offset-1 title">Stock Watch</div>
+  </div>
+  <div ui-view class="container"></div>
+
+  {% include "stocks/javascripts.html" %}
+</body>
+</html>

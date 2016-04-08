@@ -15,7 +15,42 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+import stocks.views as views
+import login.views as login_views
+from stocks.models import Stock
+from django.http import HttpResponseRedirect
+from rest_framework import routers, serializers, viewsets
+
+# Serializers define the API representation.
+class StockSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Stock
+        fields = ('company_name', 'symbol', 'invested_price', 'N_stocks','target_price','trigger_price_high','trigger_price_low')
+
+# ViewSets define the view behavior.
+class StockViewSet(viewsets.ModelViewSet):
+    queryset = Stock.objects.all()
+    serializer_class = StockSerializer
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'stocks', StockViewSet)
 
 urlpatterns = [
-    url(r'^stocks/', include('stocks.urls')),
+    url(r'^api/accounts/login/$', login_views.loginUser, name="login_user"),
+    url(r'^api/accounts/logout/$', login_views.logoutUser, name="logout_user"),
+    url(r'^api/accounts/signup/$', login_views.signupUser, name="signup_user"),
+    url(r'^api/accounts/verifysession/$', login_views.is_logged_in, name="logged_in_status"),
+    url(r'^api/company/find/$',views.getCompanyNames, name="get_company_names"),
+    url(r'^api/company/(?P<symbol>[a-zA-Z]+)$',views.company_info, name="comapany_info"),
+    url(r'^api/latestprice/stocks/$',views.portfolio, name="portfolio"),
+    url(r'^api/', include(router.urls,namespace="api")),
+    url(r'^api-token-refresh/', refresh_jwt_token),
+    url(r'^api-token-verify/', verify_jwt_token),
+    url(r'^api-token-auth/', obtain_jwt_token),
+    url(r'^$', views.index, name="index"),
+    url(r'^test/$',views.example_view),
+    url(r'^(?P<page_slug>[\w-]+)$', views.index, name="angular_router"),
+    url(r'^accounts/*',views.index, name = "angular_router"),
 ]

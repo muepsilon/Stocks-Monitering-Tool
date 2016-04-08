@@ -1,0 +1,124 @@
+/*CSS*/
+
+/*
+red-shade: rgb(223,81,76);
+green-shade: rgb(31,218,154);
+blue-shade: rgb(0,171,226);
+yellow-shade: rgb();
+*/
+body{
+  background-color: rgb(241,241,241); 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.container{
+  width: 80%;
+  background-color: rgb(255,255,255);
+  max-width: 1200px;
+  min-width: 800px;
+  min-height: 800px;
+  padding: 0;
+}
+.header{
+  background-color: rgb(0,171,226);
+  color:  white;
+  width: 100%;
+}
+.title{
+  font-size: 24px;
+  font-weight: 300;
+  padding: 10px;
+}
+.card{
+  padding:1.0rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  border-radius:3px;
+}
+.positive{
+  background-color: rgb(31,218,154);
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+.negative{
+  background-color: rgb(223,81,76);
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+.positive-values{
+  color: rgb(40,140,45);
+}
+.negative-values{
+  color: rgb(200,40,40);
+}
+.up-arrow{
+  color: green;
+}
+.down-arrow{
+  color: red;
+}
+.edit-options{
+  margin:    30px 15px;
+}
+.overall-portfolio{
+  font-size: 16px;
+  margin:  20px 0;
+}
+.overall-portfolio .pLabel{
+  font-weight: 300;
+  padding:    5px 0;
+}
+.overall-portfolio .pValue{
+  font-weight: 500;
+  padding: 5px 0;
+}
+.table{
+  font-size: 14px;
+}
+.operations{
+  padding-top: 30px;
+}
+.add-options{
+  margin-bottom: 20px;
+}
+.settings{
+  text-align: right;
+}
+.small-padding-rl{
+  padding: 0 4px;
+}
+.last-update{
+  font-size: 14px;
+  padding: 10px 0;
+  color: #6c6c6c;
+}
+#loading-bar .bar{
+  background: #e50000;
+}
+#loading-bar-spinner .spinner-icon {
+  
+  border-top-color:  #e50000;
+  border-left-color: #e50000;
+}
+.alink:hover{
+  text-decoration: none;
+}
+.search-suggestion{
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  padding: 0;
+}
+.search-suggestion ul{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+.search-suggestion li{
+  padding: 4px 20px;
+}
+.search-suggestion li:hover{
+  background-color: #D3D3D3;
+}

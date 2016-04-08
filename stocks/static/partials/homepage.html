@@ -1,0 +1,77 @@
+<div class="col-xs-12" ng-show="vm.showpage">
+
+  <div class="col-xs-12 overall-portfolio">
+    <div class="col-xs-4 small-padding-rl">
+      <div class="col-xs-12 card">
+        <div class="col-xs-12 ">
+          <div class="col-xs-6 pLabel">Investments</div>
+          <div class="col-xs-6 pValue">{{vm.portfolio.invested_amount | number: 0}}</div>
+        </div>
+        <div class="col-xs-12 ">
+          <div class="col-xs-6 pLabel">Value</div>
+          <div class="col-xs-6 pValue">{{vm.portfolio.latestValue | number: 0}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4 small-padding-rl">
+      <div class="col-xs-12 card">
+        <div class="col-xs-12">
+          <div class="col-xs-6 pLabel">Daily Change</div>
+          <div class="col-xs-6 pValue" ng-class="{'positive-values': vm.portfolio.daily_change > 0, 
+            'negative-values': vm.portfolio.daily_change < 0}">
+            <span class="glyphicon glyphicon-triangle-top up-arrow" ng-show="vm.portfolio.daily_change > 0"></span>
+            <span class="glyphicon glyphicon-triangle-down down-arrow" ng-show="vm.portfolio.daily_change < 0"></span> 
+            {{vm.portfolio.daily_change | number: 0}}({{vm.portfolio.daily_change_percent | number: 2}}%)
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="col-xs-6 pLabel">Overall Change</div>
+          <div class="col-xs-6 pValue" ng-class="{'positive-values': vm.portfolio.change > 0, 'negative-values': vm.portfolio.change < 0}">
+            <span class="glyphicon glyphicon-triangle-top up-arrow" ng-show="vm.portfolio.change > 0"></span>
+            <span class="glyphicon glyphicon-triangle-down down-arrow" ng-show="vm.portfolio.change < 0"></span> 
+            {{vm.portfolio.change | number: 0}}({{vm.portfolio.percent_change | number: 2}}%)</div>
+        </div>
+      </div>
+    </div>
+    <div class="settings col-xs-4">
+      <div class="col-xs-12">
+        <div class="last-update">Last updated at: {{ vm.date | date : 'dd-MMM HH:mma'}}</div>
+      </div>
+      <div class="col-xs-12">
+        <button class="btn btn-success" ng-click="vm.get_stocks()">Refresh</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 edit-options">
+
+    <h4>Update Portfolio</h4>
+
+    <button class="btn btn-success" ng-click = "vm.stock_operation = 'add'">Add</button>
+    <button class="btn btn-primary" ng-click = "vm.stock_operation = 'edit'">Edit</button>
+    <button class="btn btn-danger" ng-click = "vm.stock_operation = 'delete'">Delete</button>
+
+    <div class="alert alert-success alert-dismissible" role="alert" ng-show="vm.alert.success">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Success!</strong>  {{vm.alert.message}}
+    </div>
+
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-show="vm.alert.failure">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Failure!</strong>   {{vm.alert.message}}
+    </div>
+
+    <div ng-include="'static/partials/addStock.html'" class="col-xs-12"></div>
+
+    <div ng-include="'static/partials/editStock.html'" class="col-xs-12"></div>
+    
+    <div ng-include="'static/partials/deleteStock.html'" class="col-xs-12"></div>
+
+  </div>
+  
+  <div ng-include="'static/partials/table.html'" class="col-xs-12"></div>
+
+
+</div>
+<div class="col-xs-4 col-xs-offset-4" ng-hide = "vm.showpage" style="margin-top: 200px;">
+  <img src="static/images/progress.gif" alt="Loading Image" width="100%">
+</div>
