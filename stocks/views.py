@@ -5,7 +5,7 @@ from django.http import HttpResponse,HttpResponseBadRequest
 from rest_framework_jwt.views import verify_jwt_token
 from nsetools import Nse
 from django.core import serializers
-from stocks.models import Stock, CompanyList
+from stocks.models import Stock, CompanyList, WatchStock
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -74,7 +74,7 @@ def company_info(request,symbol):
 def get_quote(stock):
   # Get value from NSE
   nse = Nse()
-  keys = ['lastPrice','low52','high52','previousClose','companyName','symbol']
+  keys = ['lastPrice','low52','high52','previousClose','companyName','symbol','dayHigh','dayLow']
 
   response = nse.get_quote(stock.symbol.encode('ascii','ignore'))
 
@@ -94,6 +94,23 @@ def get_quote(stock):
   filter_response['overall_change'] = math.ceil(((filter_response['lastPrice']/filter_response['invested_price'] - 1)*100)*100)/100
   filter_response['daily_change'] = math.ceil(((filter_response['lastPrice']/filter_response['previousClose'] - 1)*100)*100)/100
   filter_response['daily_amount_change'] = stock.N_stocks*(filter_response['lastPrice']-filter_response['previousClose'])
+  
+  return filter_response
+
+def get_quote_WatchList(stock):
+  # Get value from NSE
+  nse = Nse()
+  keys = ['lastPrice','previousClose','companyName','symbol','low52','high52','dayHigh','dayLow']
+
+  response = nse.get_quote(stock.symbol.encode('ascii','ignore'))
+
+  # Filter out required fields
+  filter_response = { key : response[key] for key in keys }
+
+  # Process and add data
+  filter_response['id'] = stock.pk
+  filter_response['trigger_price_low'] = stock.trigger_price_low
+  filter_response['trigger_price_high'] = stock.trigger_price_high
   
   return filter_response
 
@@ -124,5 +141,16 @@ def portfolio(request):
 
     # Append the results
     results.append(get_quote(stock))
+
+  return HttpResponse(json.dumps(results))
+
+def watchlist(request):
+
+  stocks = WatchStock.objects.all()
+  results = []
+  for stock in stocks:
+
+    # Append the results
+    results.append(get_quote_WatchList(stock))
 
   return HttpResponse(json.dumps(results))

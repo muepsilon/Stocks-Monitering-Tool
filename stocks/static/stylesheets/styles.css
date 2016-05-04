@@ -122,3 +122,6 @@ body{
 .search-suggestion li:hover{
   background-color: #D3D3D3;
 }
+.title-h3{
+  font-size: 18px;
+}

@@ -1,0 +1,38 @@
+<div class="col-xs-12 operations" ng-show = "vm.watchlist_operation == 'add'">
+  <div class="col-xs-12">
+    <form class="form-horizontal" name="addWatchStock" ng-submit="vm.addWatchStock()" >
+      <hide-dropdowns isvisible="dropdown.search"></hide-dropdowns>
+      <div class="form-group">
+        <label for="companyName" class="col-sm-2 control-label">Company Name</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="companyName"  required ng-model="vm.formdata.company_name" ng-keydown="vm.searchSuggestion()" autocomplete="off">
+          <div class="col-xs-12" style="padding: 0;">
+            <div class="col-xs-12 search-suggestion" ng-show="vm.showSearchSuggetsion()">
+              <ul>
+                <li ng-repeat="item in vm.companySuggestion" ng-click="vm.selectCompany(item)">
+                  <span>{{item.name}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="symbol" class="col-sm-2 control-label">Symbol</label>
+        <div class="col-sm-7"><input type="text" class="form-control" id="symbol" readonly ng-model="vm.formdata.symbol"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceHigh" class="col-sm-2 control-label">Trigger Price(High)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="triggerPriceHigh" required ng-model="vm.formdata.trigger_price_high"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceLow" class="col-sm-2 control-label">Trigger Price(Low)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="investedPriceLow" required ng-model = "vm.formdata.trigger_price_low"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  <div class="col-xs-12">
+    <button class="btn btn-default" ng-click="vm.watchlist_operation = ''">Clear</button>
+  </div>
+</div>

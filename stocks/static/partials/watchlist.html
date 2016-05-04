@@ -1,0 +1,18 @@
+<div class="col-xs-12">
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>Company</th>
+      <th>Current Price</th>
+      <th>Trigger Price(Low/High)</th>
+      <th>52 Week(Low/High)</th>
+      <th>Day(Low/High)</th>
+    </tr>
+    <tr ng-repeat = "stock in vm.stocksWatchList">
+      <td><a class="alink" ui-sref='company({name: (stock.companyName | spaceless), id: stock.id })'>{{stock.companyName}}</a></td>
+      <td>{{stock.lastPrice}}</td>
+      <td>{{stock.trigger_price_low}}/{{stock.trigger_price_high}}</td>
+      <td>{{stock.low52}}/{{stock.high52}}</td>
+      <td>{{stock.dayLow}}/{{stock.dayHigh}}</td>
+    </tr>
+  </table>
+</div>

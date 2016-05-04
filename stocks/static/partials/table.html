@@ -2,20 +2,21 @@
   <table class="table table-bordered table-hover">
     <tr>
       <th>Company</th>
-      <th>Invested Price</th>
-      <th>Target Price</th>
       <th>Current Price</th>
-      <th>Trigger Price</th>
+      <th>Invested/Target</th>
+      <th>Trigger</th>
+      <th>52 Week Range</th>
       <th>Daily Change</th>
       <th>Profit/Loss</th>
     </tr>
     <tr ng-repeat = "stock in vm.stocksList">
       <td><a class="alink" ui-sref='company({name: (stock.companyName | spaceless), id: stock.id })'>{{stock.companyName}}</a></td>
-      <td>{{stock.invested_price}}</td>
-      <td>{{stock.target_price}}</td>
       <td>{{stock.lastPrice}}</td>
+      <td>{{stock.invested_price | number:1}}/{{stock.target_price}}</td>
       <td>{{stock.trigger_price_low}}/{{stock.trigger_price_high}}</td>
-      <td ng-class="{positive: stock.daily_change > 0, negative: stock.daily_change < 0}">{{stock.daily_change}}%</td>
+      <td>{{stock.low52}}/{{stock.high52}}</td>
+      <td ng-class="{positive: stock.daily_change > 0, negative: stock.daily_change < 0}">
+        {{stock.daily_amount_change | number:1}}({{stock.daily_change}}%)</td>
       <td ng-class="{positive: stock.amount_change > 0, negative: stock.amount_change < 0}">{{stock.amount_change}}({{stock.overall_change}}%)</td>
     </tr>
   </table>

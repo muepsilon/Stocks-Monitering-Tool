@@ -1,10 +1,11 @@
 {% load staticfiles  %}
-<html>
-<head>
-  <title>Portfolio</title>
+<html ng-app="stockWatch">
+<head ng-controller="headController">
+  <link rel="icon"  type="image/ico" href="/static/images/favicon.ico" />
+  <title ng-bind-html="pagetitle"></title>
   {% include "stocks/stylesheets.html" %}
 </head>
-<body ng-app="stockWatch">
+<body>
 
   <div class="col-xs-12 header">
     <div class="col-xs-offset-1 title">Stock Watch</div>

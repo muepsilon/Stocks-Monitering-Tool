@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'djangobower',
     'stocks',
     'login',
+    'mutualfund',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -123,11 +124,13 @@ BOWER_INSTALLED_APPS = (
     "angular-loading-bar",
     'ngAnimate',
     'angular-cookies',
+    'angular-sanitize',
     )
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',

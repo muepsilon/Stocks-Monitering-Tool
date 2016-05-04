@@ -1,0 +1,31 @@
+<div class="col-xs-12 operations" ng-show = "vm.watchlist_operation == 'edit'">
+  <div class="col-xs-2" style="font-weight:bold; line-height:2em;">Select Company</div>
+  <div class="col-xs-10" ng-include="'static/partials/selectStockWatchList.html'" ></div>
+  <div class="col-xs-12">
+    <form class="form-horizontal" name="editStock" ng-submit="vm.editStockWatchList()" >
+      <div class="form-group">
+        <label for="symbol" class="col-sm-2 control-label">Symbol</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="symbol" required ng-model="vm.selected_stock.symbol">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="companyName" class="col-sm-2 control-label">Company Name</label>
+        <div class="col-sm-7"><input type="text" class="form-control" id="companyName" readonly ng-model="vm.selected_stock.companyName"></div>
+        <div class="col-xs-1" ng-show="vm.process.searching"><img src="static/images/searching.gif" width="75%"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceHigh" class="col-sm-2 control-label">Trigger Price(High)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="triggerPriceHigh" required ng-model="vm.selected_stock.trigger_price_high"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceLow" class="col-sm-2 control-label">Trigger Price(Low)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="investedPriceLow" required ng-model = "vm.selected_stock.trigger_price_low"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+  <div class="col-xs-12">
+    <button class="btn btn-default" ng-click="vm.watchlist_operation = ''">Clear</button>
+  </div>
+</div>
