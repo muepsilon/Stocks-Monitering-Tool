@@ -125,6 +125,7 @@ BOWER_INSTALLED_APPS = (
     'ngAnimate',
     'angular-cookies',
     'angular-sanitize',
+    'angular-chart.js',
     )
 
 REST_FRAMEWORK = {

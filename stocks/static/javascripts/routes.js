@@ -24,7 +24,7 @@
         controllerAs: 'vm'
       })
       .state('company',{
-        url: "/:name",
+        url: "/company/:name",
         templateUrl: "/static/partials/company.html",
         params: { id: null },
         controller: "companyDetailsController",

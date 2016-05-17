@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import urllib, re, datetime, json, math
+import HTMLParser
 from django.views.decorators.http import require_http_methods
 from django.http import HttpResponse,HttpResponseBadRequest
 from rest_framework_jwt.views import verify_jwt_token
@@ -63,7 +64,7 @@ def company_info(request,symbol):
 
     start_date = start_date.strftime('%Y-%m-%d')
     response = urllib.urlopen('https://www.quandl.com/api/v3/datasets/NSE/'+ \
-       symbol + ".json?api_key=o3Bix1gXUrHz3dFPCM9x&start_date="+ start_date + "&collapse=" + collapse)
+       symbol + ".json?api_key=o3Bix1gXUrHz3dFPCM9x&start_date="+ start_date + "&order=asc&collapse=" + collapse)
     
     return HttpResponse(response.read())
 
@@ -75,8 +76,8 @@ def get_quote(stock):
   # Get value from NSE
   nse = Nse()
   keys = ['lastPrice','low52','high52','previousClose','companyName','symbol','dayHigh','dayLow']
-
-  response = nse.get_quote(stock.symbol.encode('ascii','ignore'))
+  symbol = (HTMLParser.HTMLParser().unescape(stock.symbol)).encode('ascii','ignore')
+  response = nse.get_quote(symbol)
 
   # Filter out required fields
   filter_response = { key : response[key] for key in keys }
@@ -101,8 +102,8 @@ def get_quote_WatchList(stock):
   # Get value from NSE
   nse = Nse()
   keys = ['lastPrice','previousClose','companyName','symbol','low52','high52','dayHigh','dayLow']
-
-  response = nse.get_quote(stock.symbol.encode('ascii','ignore'))
+  symbol = (HTMLParser.HTMLParser().unescape(stock.symbol)).encode('ascii','ignore')
+  response = nse.get_quote(symbol)
 
   # Filter out required fields
   filter_response = { key : response[key] for key in keys }
@@ -113,6 +114,12 @@ def get_quote_WatchList(stock):
   filter_response['trigger_price_high'] = stock.trigger_price_high
   
   return filter_response
+
+def get_index_info(request):
+  nse = Nse()
+  indexes = ['nifty 50','nifty 100']
+  values = [ nse.get_index_quote(index) for index in indexes ]
+  return HttpResponse(json.dumps(values))
 
 def get_stock_info(request,param):
   stock = Stock.objects.get(pk = param.encode('ascii','ignore'))

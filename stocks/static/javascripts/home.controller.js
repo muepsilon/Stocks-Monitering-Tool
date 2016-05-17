@@ -12,6 +12,7 @@
     var vm = this;
     vm.showpage = false;
     vm.get_stocks = get_stocks;
+    vm.indices = []; 
     vm.get_watchlist = get_watchlist;
     vm.addOption = "new";
     vm.refresh = refresh;
@@ -26,6 +27,7 @@
     vm.clearSelected = clearSelected;
     vm.delete_stock = delete_stock;
     vm.delete_stock_watch_list = delete_stock_watch_list;
+    vm.buy_stock_watch_list = buy_stock_watch_list;
     vm.addToExisting = addToExisting;
     vm.addStock =  add_stock;
     vm.addWatchStock = add_watch_stock;
@@ -196,6 +198,30 @@
         vm.clearSelected();
       });
     }
+    function buy_stock_watch_list(){
+      vm.selected_stock['company_name'] = vm.selected_stock['companyName'];
+      if (vm.selected_stock.company_name.length > 1){
+        Layout.add_stock(vm.selected_stock).then(function successCallback(response){
+          Layout.delete_stock_watch_list(vm.selected_stock.id)
+          .then(function(response){
+            vm.show_alert("Stock is moved to your portfolio!","success");
+            vm.get_watchlist();
+            vm.clearSelected();
+          });
+          vm.clearSelected();
+          vm.get_stocks();
+        }, function failureCallback(response){
+          if (response.status == 400) {
+            if (response.data.symbol != null) {
+              msg = response.data.symbol[0];
+              vm.show_alert(msg,"failure");
+            };
+          };
+        });
+      } else {
+        vm.show_alert(" No Company is listed with given Symbol", "failure");
+      }
+    }
     function showSearchSuggetsion() {
       return (vm.companySuggestion.length > 0) && vm.formdata.symbol.length == 0 && $scope.dropdown.search
     }
@@ -291,6 +317,12 @@
     }
     function get_stocks(){
       vm.process.updating = true;
+      Layout.get_indices()
+      .then(function(response){
+        if (response.data !== null) {
+          vm.indices = response.data;
+        };
+      });
       Layout.get_stocks()
       .then(function(response){
 

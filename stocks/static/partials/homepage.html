@@ -41,6 +41,55 @@
         <button class="btn btn-success" ng-click="vm.refresh()">Refresh</button>
       </div>
     </div>
+    <div class="col-xs-12 medium-padding-tb">
+      <div ng-repeat = "stock in vm.stocksList | orderBy :'daily_change' : reverse" ng-if="$last || $first">
+        <div class="col-xs-4 small-padding-rl" ng-if="$last && stock.daily_change > 0">
+          <div class="col-xs-12 card">
+            <div class="col-xs-12 positive-values font-bold">Max Gainer(Daily)</div>
+            <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+            <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.daily_change | number: 2}}%)</div>  
+          </div>
+        </div>
+        <div class="col-xs-4 small-padding-rl" ng-if="$first && stock.daily_change < 0">
+          <div class="col-xs-12 card">
+            <div class="col-xs-12 negative-values font-bold">Max Looser(Daily)</div>
+            <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+            <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.daily_change | number: 2}}%)</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 small-padding-rl" ng-if="vm.indices.length > 0">
+        <div class="col-xs-12 card">
+          <div class="col-xs-12" ng-repeat="index in vm.indices">
+            <div class="col-xs-5 font-medium">{{index.name}}</div>
+            <div class="col-xs-7">
+              {{index.lastPrice | number: 1 }}(
+              <span class="font-bold" ng-class="{'positive-values': index.pChange > 0, 'negative-values': index.pChange < 0}">
+                {{index.pChange | number: 2}}%
+              </span>)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 medium-padding-tb">
+      <div ng-repeat = "stock in vm.stocksList | orderBy :'overall_change' : reverse" ng-if="$last || $first">
+        <div class="col-xs-4 small-padding-rl" ng-if="$last && stock.overall_change > 0">
+          <div class="col-xs-12 card">
+            <div class="col-xs-12 positive-values font-bold">Max Gainer</div>
+            <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+            <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.overall_change | number: 1}}%)</div>  
+          </div>
+        </div>
+        <div class="col-xs-4 small-padding-rl" ng-if="$first && stock.overall_change < 0">
+          <div class="col-xs-12 card">
+            <div class="col-xs-12 negative-values font-bold">Max Looser</div>
+            <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+            <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.overall_change | number: 1}}%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-xs-12 edit-options">
 
@@ -80,6 +129,7 @@
       <button class="btn btn-success" ng-click = "vm.watchlist_operation = 'add'">Add</button>
       <button class="btn btn-primary" ng-click = "vm.watchlist_operation = 'edit'">Edit</button>
       <button class="btn btn-danger" ng-click = "vm.watchlist_operation = 'delete'">Delete</button>
+      <button class="btn btn-success" ng-click = "vm.watchlist_operation = 'buy'">Buy</button>
 
       <div class="alert alert-success alert-dismissible" role="alert" ng-show="vm.alert.success">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -96,6 +146,8 @@
       <div ng-include="'static/partials/editStockWatchList.html'" class="col-xs-12"></div>
       
       <div ng-include="'static/partials/deleteStockWatchList.html'" class="col-xs-12"></div>
+      
+      <div ng-include="'static/partials/buyStockWatchList.html'" class="col-xs-12"></div>
 
     </div>
     <div ng-include="'static/partials/watchlist.html'" class="col-xs-12"></div>

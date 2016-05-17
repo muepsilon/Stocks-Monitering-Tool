@@ -3,7 +3,7 @@
 (function(){
 
   var app = angular.module('stockWatch',['stockWatch.routes','stockWatch.controllers',
-    'stockWatch.services','angular-loading-bar', "stockWatch.directives","ngSanitize"]);
+    'stockWatch.services','angular-loading-bar', "stockWatch.directives","ngSanitize","chart.js"]);
 
   angular.module('stockWatch.routes',['ui.router']);
 

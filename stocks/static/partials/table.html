@@ -4,15 +4,17 @@
       <th>Company</th>
       <th>Current Price</th>
       <th>Invested/Target</th>
+      <th>Quantity</th>
       <th>Trigger</th>
       <th>52 Week Range</th>
       <th>Daily Change</th>
       <th>Profit/Loss</th>
     </tr>
     <tr ng-repeat = "stock in vm.stocksList">
-      <td><a class="alink" ui-sref='company({name: (stock.companyName | spaceless), id: stock.id })'>{{stock.companyName}}</a></td>
+      <td><a class="alink" ui-sref='company({name: (stock.companyName | spaceless), id: stock.id })' target="_blank">{{stock.companyName}}</a></td>
       <td>{{stock.lastPrice}}</td>
       <td>{{stock.invested_price | number:1}}/{{stock.target_price}}</td>
+      <td>{{stock.N_stocks}}</td>
       <td>{{stock.trigger_price_low}}/{{stock.trigger_price_high}}</td>
       <td>{{stock.low52}}/{{stock.high52}}</td>
       <td ng-class="{positive: stock.daily_change > 0, negative: stock.daily_change < 0}">

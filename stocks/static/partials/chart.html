@@ -1,0 +1,30 @@
+<div class="col-xs-12">
+  <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-8 col-md-6 searchbox">
+      <input type="text" class="form-control" id="companyName"  required ng-model="company_query" ng-keydown="searchSuggestion()" autocomplete="off" placeholder="Search for Companies">
+      <div class="col-xs-12" style="padding: 0;">
+        <div class="col-xs-12 search-suggestion" ng-show="showSearchSuggestion()">
+          <ul>
+            <li ng-repeat="item in companySuggestion" ng-click="selectCompany(item)">
+              <span>{{item.name}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+    <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" ng-repeat="item in timeframe" ng-class='{"active": $index == selectedTimeframe }' ng-click="changeTimeframe($index)">{{item}}</li>
+    </ul>
+  </div>
+</div>
+<div class="col-xs-12" ng-hide="loadingData">
+  <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-options="chart_options"
+    chart-legend="true" chart-series="series" chart-click="onClick"></canvas>
+</div>
+<div class="col-xs-12" ng-show="loadingData">
+  <div class="preloading-image col-xs-12">
+    <img src="/static/images/preloader.gif" height="100%">
+  </div>
+</div>

@@ -13,10 +13,12 @@
 
       var Layout = {
         get_stocks :      get_stocks,
+        get_indices:      get_indices,
         get_stocks_watch: get_stocks_watch,
         delete_stock:     delete_stock,
         delete_stock_watch_list: delete_stock_watch_list,
         validate_company_name:  validate_company_name,
+        get_company_data : get_company_data,
         add_stock:        add_stock,
         add_watch_stock:  add_watch_stock,
         is_logged_in:     is_logged_in,
@@ -31,6 +33,9 @@
 
       function get_stocks(){
         return $http.get(BASE_URL + "api/latestprice/stocks");
+      }
+      function get_indices () {
+        return $http.get(BASE_URL + "api/latestprice/indices/");
       }
       function get_stocks_watch(){
         return $http.get(BASE_URL + "api/latestprice/watchstocks");
@@ -70,6 +75,10 @@
       }
       function is_logged_in(){
         return $http.post(BASE_URL + "api/accounts/verifysession/")
+      }
+      function get_company_data(symbol,timeframe){
+        timeframe = timeframe || '1y'
+        return $http.get(BASE_URL + "api/company/" + symbol + "?timeframe=" + timeframe)
       }
     };
 

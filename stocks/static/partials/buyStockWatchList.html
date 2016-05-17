@@ -1,0 +1,36 @@
+<div class="col-xs-12 operations" ng-show = "vm.watchlist_operation == 'buy'">
+  <div class="col-xs-12">
+    <form class="form-horizontal" name="editStock" ng-submit="vm.buy_stock_watch_list()" >
+      <div class="form-group">
+        <label for="symbol" class="col-sm-2 control-label">Company</label>
+        <div class="col-sm-7">
+          <div class="col-xs-10" ng-include="'static/partials/selectStockWatchList.html'" ></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="N_stocks" class="col-sm-2 control-label">Number of Stocks</label>
+        <div class="col-sm-7"><input type="number" step="1" class="form-control" id="N_stocks" required ng-model="vm.selected_stock.N_stocks"></div>
+      </div>
+      <div class="form-group">
+        <label for="investedPrice" class="col-sm-2 control-label">Invested Price</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="investedPrice" required ng-model = "vm.selected_stock.invested_price"></div>
+      </div>
+      <div class="form-group">
+        <label for="targetPrice" class="col-sm-2 control-label">Target Price</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="targetPrice" required ng-model = "vm.selected_stock.target_price"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceHigh" class="col-sm-2 control-label">Trigger Price(High)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="triggerPriceHigh" required ng-model="vm.selected_stock.trigger_price_high"></div>
+      </div>
+      <div class="form-group">
+        <label for="triggerPriceLow" class="col-sm-2 control-label">Trigger Price(Low)</label>
+        <div class="col-sm-7"><input type="number" step="0.01" class="form-control" id="triggerPriceLow" required ng-model = "vm.selected_stock.trigger_price_low"></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Buy</button>
+    </form>
+  </div>
+  <div class="col-xs-6">
+    <button class="btn btn-default" ng-click="vm.clearSelected()">Clear</button>
+  </div>
+</div>

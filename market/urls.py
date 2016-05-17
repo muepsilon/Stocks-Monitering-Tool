@@ -58,6 +58,7 @@ urlpatterns = [
     url(r'^api/company/(?P<symbol>[a-zA-Z]+)$',views.company_info, name="comapany_info"),
     url(r'^api/latestprice/stocks/$',views.portfolio, name="portfolio"),
     url(r'^api/latestprice/watchstocks/$',views.watchlist, name="watchList"),
+    url(r'^api/latestprice/indices/$',views.get_index_info, name="index quotes"),
     url(r'^api/', include(router.urls,namespace="api")),
     url(r'^api-token-refresh/', refresh_jwt_token),
     url(r'^api-token-verify/', verify_jwt_token),
@@ -65,6 +66,6 @@ urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^test/$',views.example_view),
     url(r'^updatedb/$', mfviews.update_database),
-    url(r'^(?P<page_slug>[\w-]+)$', views.index, name="angular_router"),
+    url(r'^company/(?P<page_slug>[\w-]+)$', views.index, name="angular_router"),
     url(r'^accounts/*',views.index, name = "angular_router"),
 ]
