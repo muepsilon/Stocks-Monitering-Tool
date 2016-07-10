@@ -9,7 +9,7 @@
 
     function Layout($http){
 
-      var BASE_URL = "http://localhost:8000/";
+      var BASE_URL = "http://market.com:8000/";
 
       var Layout = {
         get_stocks :      get_stocks,
@@ -26,7 +26,8 @@
         edit_stock_watch_list: edit_stock_watch_list,
         login:            login,
         signup:           signup,
-        logout:           logout 
+        logout:           logout,
+        duplicateCheck:   duplicateCheck
       };
 
       return Layout;
@@ -72,6 +73,15 @@
       }
       function logout () {
         return $http.post(BASE_URL + "api/accounts/logout/")
+      }
+      function duplicateCheck(credential){
+        var query = "";
+        credential = credential || {};
+        credential.username = credential.username || "";
+        credential.email = credential.email || "";
+        query = "username="+credential.username+"&email="+credential.email;
+        
+        return $http.get(BASE_URL + "api/accounts/duplicatecheck/?"+query)
       }
       function is_logged_in(){
         return $http.post(BASE_URL + "api/accounts/verifysession/")

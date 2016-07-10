@@ -1,0 +1,12 @@
+django
+django-cors-headers
+django-bower
+requests
+jwt
+djangorestframework
+djangorestframework-jwt
+cryptography
+pandas
+quandl
+nsetools
+git+https://github.com/muepsilon/nsemodule.git@develop

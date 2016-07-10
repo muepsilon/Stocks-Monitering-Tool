@@ -1,0 +1,8 @@
+<div class="col-xs-4 col-xs-offset-4 error-block" ng-hide = "vm.showpage">
+  <div class="col-xs-12" ng-show="vm.data_fetched">
+    <span>{{vm.errorMessage}}! <button ng-click="vm.try_fetching_stocks_data()" class="btn btn-primary">Try again</button></span>
+  </div>
+  <div class="col-xs-12" ng-hide = "vm.data_fetched">
+    <img src="static/images/progress.gif" alt="Loading Image" width="100%">
+  </div>
+</div>

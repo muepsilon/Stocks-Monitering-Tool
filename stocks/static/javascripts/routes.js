@@ -17,9 +17,10 @@
         controller: "indexController",
         controllerAs: 'vm'
       })
-      .state('login',{
-        url: "/accounts",
+      .state('accounts',{
+        url: "/accounts?form",
         templateUrl: "/static/login/partials/login_signup.html",
+        params: { redirect_state: null, endpoint: null, form: null},
         controller: "accountsController",
         controllerAs: 'vm'
       })

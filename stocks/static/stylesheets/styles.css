@@ -11,6 +11,11 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+.ui-page{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 .container{
   width: 80%;
   background-color: rgb(255,255,255);
@@ -159,4 +164,20 @@ body{
 }
 .searchbox{
   margin: 10px auto;
+}
+.btn-group-login{
+  float: right;
+  padding: 7px 10px;
+  text-align: right;
+}
+.error-msg{
+  font-size: 12px;
+  color: rgba(244,67,54,1);
+  font-weight: 400;
+}
+.error-block{
+  position: fixed;
+  z-index: 100;
+  top: 200px;
+  text-align: center;
 }

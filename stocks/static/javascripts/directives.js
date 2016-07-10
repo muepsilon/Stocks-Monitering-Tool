@@ -32,6 +32,47 @@
   });
 
   angular.module("stockWatch.directives")
+  .directive('header',function(){
+    return {
+      restrict: 'E',
+      scope: {},
+      controller: ['$scope','Layout','$state',function($scope,Layout,$state){
+
+        $scope.is_logged_in = false;
+        $scope.check_session = check_session;
+
+        Layout.is_logged_in()
+        .then(function successCallback(response){
+          $scope.is_logged_in = response.data.login;
+        },function failureCallback(){
+          
+        });
+
+        function check_session(){
+          return $scope.is_logged_in;
+        }
+        $scope.login = function(){
+          if ($state.current.name == 'company') {
+            $state.go('accounts',{'redirect_state':$state.current.name,'endpoint':$state.params.name});
+          } else {
+            $state.go('accounts',{'redirect_state':$state.current.name});
+          }
+        }
+        $scope.logout = function(){
+          Layout.logout()
+          .then(function successCallback(){
+            $scope.is_logged_in = false;
+            $state.go($state.current, {}, {reload: true});
+          },function failureCallback(){
+
+          });
+        }
+      }],
+      templateUrl: '/static/partials/header.html'
+    }
+  });
+
+  angular.module("stockWatch.directives")
   .directive('stockHistory',function(){
     return {
       restrict: 'E',

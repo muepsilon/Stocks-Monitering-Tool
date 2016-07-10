@@ -5,12 +5,16 @@
   angular.module('stockWatch.controllers')
     .controller('indexController', indexController);
 
-  indexController.$inject = ['$scope','Layout','$interval','$window','$timeout','$http','$rootScope'];
+  indexController.$inject = ['$scope','Layout','$interval','$window','$timeout','$http','$rootScope','$state'];
 
-  function indexController($scope,Layout, $interval,$window,$timeout,$http,$rootScope){
+  function indexController($scope,Layout, $interval,$window,$timeout,$http,$rootScope,$state){
 
     var vm = this;
+    vm.user = {"email": "","first_name": "","last_name":""};
     vm.showpage = false;
+    vm.data_fetched = false;
+    vm.errorMessage = "";
+    vm.counter = 60;
     vm.get_stocks = get_stocks;
     vm.indices = []; 
     vm.get_watchlist = get_watchlist;
@@ -48,18 +52,30 @@
     vm.portfolio.percent_change = 0;
     vm.portfolio.latestValue = 0;
     vm.selected_stock = "";
-    vm.get_stocks();
-    vm.get_watchlist();
     $scope.dropdown = {"search": true };
     vm.companySuggestion = [];
+    vm.try_fetching_stocks_data = try_fetching_stocks_data;
     vm.selectCompany = selectCompany;
     vm.showSearchSuggetsion = showSearchSuggetsion;
     vm.createRefreshOptionList();
     vm.duringExhangeOpen = duringExhangeOpen;
     vm.searchSuggestion = searchSuggestion;
     vm.setInterval = vm.refreshOptionList[2];
-    $interval(vm.duringExhangeOpen, 1000*vm.refreshOption[vm.setInterval.id]);
 
+    Layout.is_logged_in()
+    .then(function successCallback(response){
+      if (response.data.login == true) {
+        vm.user.email = response.data.email;
+        $interval(vm.duringExhangeOpen, 1000*vm.refreshOption[vm.setInterval.id]);
+        vm.get_stocks();
+        vm.get_watchlist();
+      } else {
+        $state.go('accounts',{'redirect_state':$state.current.name});
+      }
+    },function failureCallback(response){
+
+    });
+    
     // Function blocks
     function searchSuggestion(){
       if (vm.formdata.company_name != undefined && vm.formdata.company_name.length > 0) {
@@ -153,21 +169,32 @@
       vm.formdata.invested_price = vm.selected_stock.invested_price;
       vm.profit = Math.ceil((vm.formdata.selling_price -  vm.formdata.invested_price)*vm.formdata.N_stocks*0.993);
       vm.formdata.N_stocks = vm.selected_stock.N_stocks - vm.formdata.N_stocks;
-      vm.formdata.symbol = vm.selected_stock.symbol;
-      vm.formdata.company_name = vm.selected_stock.companyName;
-      vm.formdata.target_price = vm.selected_stock.target_price;
-      vm.formdata.trigger_price_high = vm.selected_stock.trigger_price_high;
-      vm.formdata.trigger_price_low = vm.selected_stock.trigger_price_low;
-      id = vm.selected_stock.id;
       
-      Layout.edit_stock(id, vm.formdata)
-      .then(function successCallback(response){
-        vm.show_alert(" Stock sold from your portfolio, Profit is " + vm.profit.toString(), "success");
-        vm.clearSelected();
-        vm.get_stocks();
-      }, function failureCallback(response){
-        vm.show_alert("Error Occured!","failure");
-      });
+      if(vm.formdata.N_stocks == 0){
+        Layout.delete_stock(vm.selected_stock.id)
+        .then(function(response){
+          vm.show_alert(" Stock sold from your portfolio, Profit is " + vm.profit.toString(), "success");
+          vm.clearSelected();
+          removeStockFromList(vm.stocksList,vm.selected_stock.id);
+        });
+      } else {
+        vm.formdata.symbol = vm.selected_stock.symbol;
+        vm.formdata.company_name = vm.selected_stock.companyName;
+        vm.formdata.target_price = vm.selected_stock.target_price;
+        vm.formdata.trigger_price_high = vm.selected_stock.trigger_price_high;
+        vm.formdata.trigger_price_low = vm.selected_stock.trigger_price_low;
+        id = vm.selected_stock.id;
+
+        Layout.edit_stock(id, vm.formdata)
+        .then(function successCallback(response){
+          vm.show_alert(" Stock sold from your portfolio, Profit is " + vm.profit.toString(), "success");
+          vm.clearSelected();
+          vm.get_stocks();
+        }, function failureCallback(response){
+          vm.show_alert("Error Occured!","failure");
+        });  
+      }
+      
     }
     function editStockWatchList(){
 
@@ -186,7 +213,7 @@
       Layout.delete_stock(vm.selected_stock.id)
       .then(function(response){
         vm.show_alert("Stock is deleted!","success");
-        vm.get_stocks();
+        removeStockFromList(vm.stocksList,vm.selected_stock.id);
         vm.clearSelected();
       });
     }
@@ -194,9 +221,14 @@
       Layout.delete_stock_watch_list(vm.selected_stock.id)
       .then(function(response){
         vm.show_alert("Stock is deleted!","success");
-        vm.get_watchlist();
+        removeStockFromList(vm.stocksWatchList,vm.selected_stock.id);
         vm.clearSelected();
       });
+    }
+    function try_fetching_stocks_data(){
+      vm.errorMessage = "";
+      vm.get_stocks();
+      vm.get_watchlist();
     }
     function buy_stock_watch_list(){
       vm.selected_stock['company_name'] = vm.selected_stock['companyName'];
@@ -205,7 +237,7 @@
           Layout.delete_stock_watch_list(vm.selected_stock.id)
           .then(function(response){
             vm.show_alert("Stock is moved to your portfolio!","success");
-            vm.get_watchlist();
+            removeStockFromList(vm.stocksWatchList,vm.selected_stock.id);
             vm.clearSelected();
           });
           vm.clearSelected();
@@ -267,6 +299,7 @@
     function duringExhangeOpen(){
       var date = new Date();
       if (date.getHours() > 8 && date.getHours() < 17) {
+        vm.errorMessage = "";
         vm.get_stocks();
         vm.get_watchlist();
       };
@@ -277,8 +310,8 @@
     }
     function get_watchlist(){
       vm.process.updating = true;
-      Layout.get_stocks_watch()
-      .then(function(response){
+      Layout.get_stocks_watch(vm.user.email)
+      .then(function successCallback(response){
 
         if (response.data !== null) {
           vm.stocksWatchList = response.data;
@@ -313,7 +346,22 @@
             };
           };
         };
+      },function failureCallback(response){
+        vm.errorMessage += "Unable to fetch Watchlist Data";
+        vm.data_fetched = true;
       });
+    }
+    function removeStockFromList(stockslist, stockid){
+      var index = null;
+      for (var i = stockslist.length - 1; i >= 0; i--) {
+        if (stockslist[i].id == stockid) {
+          index = i;
+          break;
+        }
+      };
+      if (index != null){
+        stockslist.splice(index,1);
+      }
     }
     function get_stocks(){
       vm.process.updating = true;
@@ -323,8 +371,8 @@
           vm.indices = response.data;
         };
       });
-      Layout.get_stocks()
-      .then(function(response){
+      Layout.get_stocks(vm.user.email)
+      .then(function successCallback(response){
 
       if (response.data !== null) {
         vm.stocksList = response.data;
@@ -381,6 +429,9 @@
           };
         };
       };
+      },function failureCallback(response){
+        vm.errorMessage += "Unable to fetch Stock Data. ";
+        vm.data_fetched = true;
       });
     }
   };
