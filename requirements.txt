@@ -3,6 +3,7 @@ django-cors-headers
 django-bower
 requests
 jwt
+bs4
 djangorestframework
 djangorestframework-jwt
 cryptography

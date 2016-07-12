@@ -24,9 +24,14 @@ def getCompanyNames(request):
    
   query = request.GET.get('query','').encode('ascii','ignore')
   companyList = CompanyList.objects.filter(name__contains = query)[0:5]
-  companyListDict = serializers.serialize("python", companyList)
-  filteredList = [ item['fields'] for item in companyListDict ]
+  companyListDict = serializers.serialize("json", companyList)
+  filteredList = [ item['fields'] for item in json.loads(companyListDict)]
   return HttpResponse(json.dumps(filteredList))
+
+def fetch_ipo_info(request):
+  nse = nsemodule.Nse()
+  response = nse.fetch_ipo_info()
+  return HttpResponse(response['response'])
 
 def company_info(request,symbol):
   

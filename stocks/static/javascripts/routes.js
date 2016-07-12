@@ -13,8 +13,14 @@
       .state('home', {
         url: "/",
         templateUrl: "/static/partials/homepage.html",
+        controller: "homeController",
+        controllerAs: 'vm'
+      })
+      .state('portfolio', {
+        url: "/portfolio",
+        templateUrl: "/static/partials/portfolio.html",
         params: { first_name: null, email: null},
-        controller: "indexController",
+        controller: "portfolioController",
         controllerAs: 'vm'
       })
       .state('accounts',{

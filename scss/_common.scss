@@ -1,0 +1,42 @@
+
+// Page
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  // Gradient from generator
+  background: rgba(220,116,129,1);
+  background: -moz-linear-gradient(45deg, rgba(220,116,129,1) 0%, rgba(241,111,92,1) 0%, rgba(200,110,132,1) 31%, rgba(170,101,136,1) 70%, rgba(131,91,141,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(220,116,129,1)), color-stop(0%, rgba(241,111,92,1)), color-stop(31%, rgba(200,110,132,1)), color-stop(70%, rgba(170,101,136,1)), color-stop(100%, rgba(131,91,141,1)));
+  background: -webkit-linear-gradient(45deg, rgba(220,116,129,1) 0%, rgba(241,111,92,1) 0%, rgba(200,110,132,1) 31%, rgba(170,101,136,1) 70%, rgba(131,91,141,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(220,116,129,1) 0%, rgba(241,111,92,1) 0%, rgba(200,110,132,1) 31%, rgba(170,101,136,1) 70%, rgba(131,91,141,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(220,116,129,1) 0%, rgba(241,111,92,1) 0%, rgba(200,110,132,1) 31%, rgba(170,101,136,1) 70%, rgba(131,91,141,1) 100%);
+}
+
+.container{
+  width: 80%;
+  background-color: rgb(255,255,255);
+  max-width: 1200px;
+  min-width: 800px;
+  min-height: 800px;
+  padding: 0;
+  border: $border-grey-lighter;
+  border-radius: $border-radius-medium;
+}
+
+.navbar{
+  border-radius: 0px !important;
+  font-weight: 400;
+}
+
+.form-group input {
+  width: 100% !important;
+}
+.navbar-form{
+  width: 100% !important;
+}
+
+section{
+  border-bottom: $border-grey-lighter;
+  padding: 2em 0;
+  overflow: auto;
+}

@@ -27,6 +27,7 @@
         login:            login,
         signup:           signup,
         logout:           logout,
+        get_ipo_data:     get_ipo_data,
         duplicateCheck:   duplicateCheck
       };
 
@@ -52,7 +53,9 @@
         .success(function(){
         });
       }
-
+      function get_ipo_data(){
+        return $http.get(BASE_URL + 'api/fetch_ipo_info/');
+      }
       function add_stock(data){
         return $http.post(BASE_URL + "api/stocks/",data);
       }
@@ -60,10 +63,10 @@
         return $http.post(BASE_URL + "api/watchstocks/",data);
       }
       function edit_stock(id, data){
-        return $http.put(BASE_URL + "api/stocks/" + id.toString(), data);
+        return $http.put(BASE_URL + "api/stocks/" + id.toString() +"/", data);
       }
       function edit_stock_watch_list(id, data){
-        return $http.put(BASE_URL + "api/watchstocks/" + id.toString(), data);
+        return $http.put(BASE_URL + "api/watchstocks/" + id.toString() + "/", data);
       }
       function login (data) {
         return $http.post(BASE_URL + "api/accounts/login/", data)

@@ -1,0 +1,41 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  background: #dc7481;
+  background: -moz-linear-gradient(45deg, #dc7481 0%, #f16f5c 0%, #c86e84 31%, #aa6588 70%, #835b8d 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, #dc7481), color-stop(0%, #f16f5c), color-stop(31%, #c86e84), color-stop(70%, #aa6588), color-stop(100%, #835b8d));
+  background: -webkit-linear-gradient(45deg, #dc7481 0%, #f16f5c 0%, #c86e84 31%, #aa6588 70%, #835b8d 100%);
+  background: -o-linear-gradient(45deg, #dc7481 0%, #f16f5c 0%, #c86e84 31%, #aa6588 70%, #835b8d 100%);
+  background: -ms-linear-gradient(45deg, #dc7481 0%, #f16f5c 0%, #c86e84 31%, #aa6588 70%, #835b8d 100%); }
+
+.container {
+  width: 80%;
+  background-color: white;
+  max-width: 1200px;
+  min-width: 800px;
+  min-height: 800px;
+  padding: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px; }
+
+.navbar {
+  border-radius: 0px !important;
+  font-weight: 400; }
+
+.form-group input {
+  width: 100% !important; }
+
+.navbar-form {
+  width: 100% !important; }
+
+section {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 2em 0;
+  overflow: auto; }
+
+.header {
+  background-color: #00abe2;
+  color: white;
+  width: 100%; }
+
+/*# sourceMappingURL=app.css.map */

@@ -35,7 +35,7 @@
       .then(function(response){
       console.log(response.data);
         if (response.data.login == true) {
-          $state.go("home",{first_name: response.data.first_name, email: response.data.email});
+          $state.go("portfolio",{first_name: response.data.first_name, email: response.data.email});
         } else {
           vm.is_logged_in = false;
         }
@@ -48,10 +48,10 @@
           if ($stateParams.redirect_state == 'company') {
             $state.go('company',{'name': $stateParams.endpoint});
           } else {
-            $state.go('home')
+            $state.go('portfolio')
           }
         } else {
-          $state.go('home');
+          $state.go('portfolio');
         }
       }, function failure(response){
         
@@ -73,10 +73,10 @@
               if ($stateParams.redirect_state == 'company') {
                 $state.go('company',{'name': $stateParams.endpoint});
               } else {
-                $state.go('home')
+                $state.go('portfolio')
               }
             } else {
-              $state.go('home');
+              $state.go('portfolio');
             }
           }, function failure(response){
             console.log(response);

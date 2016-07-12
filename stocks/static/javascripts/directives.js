@@ -36,14 +36,20 @@
     return {
       restrict: 'E',
       scope: {},
-      controller: ['$scope','Layout','$state',function($scope,Layout,$state){
+      controller: ['$scope','Layout','$state','$rootScope',function($scope,Layout,$state,$rootScope){
 
         $scope.is_logged_in = false;
         $scope.check_session = check_session;
+        $scope.dropdown = false;
+        $scope.first_name = "";
+        $scope.company_query = "";
+        $scope.companySuggestion = [];
+        $scope.route = $state.current.name;
 
         Layout.is_logged_in()
         .then(function successCallback(response){
           $scope.is_logged_in = response.data.login;
+          $scope.first_name = response.data.first_name;
         },function failureCallback(){
           
         });
@@ -58,11 +64,32 @@
             $state.go('accounts',{'redirect_state':$state.current.name});
           }
         }
+        $scope.searchSuggestion = function (){
+          if ($scope.company_query != undefined && $scope.company_query.length > 0) {
+            Layout.validate_company_name($scope.company_query)
+            .then(function(response){
+                $scope.companySuggestion = response.data;
+                $scope.dropdown = true;
+            });
+          } else {
+            $scope.companySuggestion = [];
+            $scope.company_query = "";
+          }
+        }
+        $scope.showSearchSuggestion = function () {
+          $scope.company_query = $scope.company_query || "";
+          return ($scope.companySuggestion.length > 0) &&  $scope.dropdown && $scope.company_query.length > 0 ;
+        }
+        $scope.selectCompany = function (item){
+          var companyName = item.name;
+          $state.go('company',{name: companyName.replace(/[ ]/g,'-')});
+        }
         $scope.logout = function(){
           Layout.logout()
           .then(function successCallback(){
             $scope.is_logged_in = false;
-            $state.go($state.current, {}, {reload: true});
+            $rootScope.portfolio_change = "";
+            $state.go('home');
           },function failureCallback(){
 
           });
