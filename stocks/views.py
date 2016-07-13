@@ -119,8 +119,9 @@ def get_quote_WatchList(stocks):
 
 def get_index_info(request):
   nse = nsemodule.Nse()
-  indexes = ['NIFTY 50','NIFTY MIDCAP 50']
+  indexes = ['NIFTY 50','NIFTY MIDCAP 50','NIFTY MID100 FREE','NIFTY SML100 FREE','NIFTY 500']
   values = nse.get_indices(indexes)['response']
+  values = { i["indexName"].lower().replace(" ","_") : i for i in values }
   return HttpResponse(json.dumps(values))
 
 def get_stock_info(request,param):

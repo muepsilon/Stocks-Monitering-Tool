@@ -8,6 +8,22 @@ $grey-border: rgb(230,230,230);
 // Margins
 
 
+// Font-weights
+$font-weight-medium: 400;
+$font-weight-light: 300;
+$font-weight-bold: 500;
+
 // Borders
 $border-grey-lighter: 1px solid $grey-border;
 $border-radius-medium: 4px;
+
+
+.font-light{
+  font-weight: $font-weight-light;
+}
+.font-medium{
+  font-weight: $font-weight-medium;
+}
+.font-bold{
+  font-weight: $font-weight-bold;
+}

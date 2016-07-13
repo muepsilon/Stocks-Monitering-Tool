@@ -17,7 +17,7 @@
     $scope.$watch(function(){ return $rootScope.portfolio_change}, function(){
       $scope.pagetitle = "Portfolio " + $rootScope.portfolio_change;
       // Notification system
-      if ($rootScope.portfolioChange.length > 2){
+      if ($rootScope.portfolioChange != null && $rootScope.portfolioChange.length > 2){
         vm.portfolioChange = $rootScope.portfolio_change.split("/").map(Number); 
         vm.baseChange = Math.abs(vm.portfolioChange[1]) > 1000 ? vm.portfolioChange[1] : 1000;
 

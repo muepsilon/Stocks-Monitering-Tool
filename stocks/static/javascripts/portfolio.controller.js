@@ -365,10 +365,17 @@
     }
     function get_stocks(){
       vm.process.updating = true;
+      index_list = ["nifty_50", "nifty_midcap_50"];
       Layout.get_indices()
       .then(function(response){
         if (response.data !== null) {
-          vm.indices = response.data;
+          index_data = response.data;
+          vm.indices = [];
+          for (index in index_list){
+            if (index_list[index] in index_data){
+              vm.indices.push(index_data[index_list[index]]);
+            }
+          }
         };
       });
       Layout.get_stocks(vm.user.email)

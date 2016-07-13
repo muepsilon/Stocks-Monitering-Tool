@@ -24,5 +24,33 @@
         }
     }
   });
+
+  app.filter('regularForm',function() {
+    return function(input) {
+        if (input) {
+            return input.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });    
+        }
+    }
+  });
+  app.filter('shortName',function(){
+    return function(name,length){
+      var shortname = "";
+      var maxLength = length == undefined ? 12 : length;
+      if (name.length > maxLength) {
+        names = name.split(" ");
+        index = 0;
+        count = 0
+        while(shortname.length < maxLength && count < 5){
+          console.log(shortname, shortname.length);
+          shortname+=names[index]+" ";
+          index+=1;
+          count+=1;
+        }
+      } else {
+        shortname = name;
+      }
+      return shortname;
+    }
+  });
   
 })();

@@ -44,14 +44,6 @@
   font-size: 16px;
   margin:  20px 0;
 }
-.overall-portfolio .pLabel{
-  font-weight: 300;
-  padding:    5px 0;
-}
-.overall-portfolio .pValue{
-  font-weight: 500;
-  padding: 5px 0;
-}
 .table{
   font-size: 14px;
 }
@@ -70,12 +62,7 @@
 .medium-padding-tb{
   padding: 10px 0;
 }
-.font-medium{
-  font-weight: 400;
-}
-.font-bold{
-  font-weight: 500;
-}
+
 .last-update{
   font-size: 14px;
   padding: 10px 0;
@@ -153,6 +140,6 @@
 .error-block{
   position: fixed;
   z-index: 100;
-  top: 200px;
+  top: 300px;
   text-align: center;
 }

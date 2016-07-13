@@ -48,14 +48,14 @@
           <div class="col-xs-4 small-padding-rl" ng-if="$last && stock.daily_change > 0">
             <div class="col-xs-12 card">
               <div class="col-xs-12 positive-values font-bold">Max Gainer(Daily)</div>
-              <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+              <div class="col-xs-7 font-medium">{{stock.companyName | shortName}}</div>
               <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.daily_change | number: 2}}%)</div>  
             </div>
           </div>
           <div class="col-xs-4 small-padding-rl" ng-if="$first && stock.daily_change < 0">
             <div class="col-xs-12 card">
               <div class="col-xs-12 negative-values font-bold">Max Looser(Daily)</div>
-              <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+              <div class="col-xs-7 font-medium">{{stock.companyName | shortName}}</div>
               <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.daily_change | number: 2}}%)</div>
             </div>
           </div>
@@ -63,11 +63,11 @@
         <div class="col-xs-4 small-padding-rl" ng-if="vm.indices.length > 0">
           <div class="col-xs-12 card">
             <div class="col-xs-12" ng-repeat="index in vm.indices">
-              <div class="col-xs-5 small-padding-rl font-medium">{{index.name}}</div>
-              <div class="col-xs-7 small-padding-rl">
-                {{index.lastPrice}}(
-                <span class="font-bold" ng-class="{'positive-values': index.pChange > 0, 'negative-values': index.pChange < 0}">
-                  {{index.pChange | number: 2}}%
+              <div class="col-xs-6 small-padding-rl font-medium">{{index.indexName}}</div>
+              <div class="col-xs-6 small-padding-rl">
+                {{index.last}}(
+                <span class="font-bold" ng-class="{'positive-values': index.percChange > 0, 'negative-values': index.percChange < 0}">
+                  {{index.percChange | number: 2}}%
                 </span>)
               </div>
             </div>
@@ -79,14 +79,14 @@
           <div class="col-xs-4 small-padding-rl" ng-if="$last && stock.overall_change > 0">
             <div class="col-xs-12 card">
               <div class="col-xs-12 positive-values font-bold">Max Gainer</div>
-              <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+              <div class="col-xs-7 font-medium">{{stock.companyName | shortName}}</div>
               <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.overall_change | number: 1}}%)</div>  
             </div>
           </div>
           <div class="col-xs-4 small-padding-rl" ng-if="$first && stock.overall_change < 0">
             <div class="col-xs-12 card">
               <div class="col-xs-12 negative-values font-bold">Max Looser</div>
-              <div class="col-xs-7 font-medium">{{stock.companyName}}</div>
+              <div class="col-xs-7 font-medium">{{stock.companyName | shortName }}</div>
               <div class="col-xs-4">{{stock.lastPrice | number: 1 }}({{stock.overall_change | number: 1}}%)</div>
             </div>
           </div>

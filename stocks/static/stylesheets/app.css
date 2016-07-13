@@ -1,3 +1,12 @@
+.font-light {
+  font-weight: 300; }
+
+.font-medium {
+  font-weight: 400; }
+
+.font-bold {
+  font-weight: 500; }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -32,6 +41,14 @@ section {
   border-bottom: 1px solid #e6e6e6;
   padding: 2em 0;
   overflow: auto; }
+
+.overall-portfolio .pLabel {
+  font-weight: 400;
+  padding: 5px 0; }
+
+.overall-portfolio .pValue {
+  font-weight: 500;
+  padding: 5px 0; }
 
 .header {
   background-color: #00abe2;

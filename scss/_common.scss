@@ -40,3 +40,11 @@ section{
   padding: 2em 0;
   overflow: auto;
 }
+.overall-portfolio .pLabel{
+  font-weight: $font-weight-medium;
+  padding:    5px 0;
+}
+.overall-portfolio .pValue{
+  font-weight: $font-weight-bold;
+  padding: 5px 0;
+}
