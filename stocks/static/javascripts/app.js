@@ -2,8 +2,8 @@
 
 (function(){
 
-  var app = angular.module('stockWatch',['stockWatch.routes','stockWatch.controllers',
-    'stockWatch.services','angular-loading-bar', "stockWatch.directives","ngSanitize","chart.js"]);
+  var app = angular.module('stockWatch',['chart.js','stockWatch.routes','stockWatch.controllers',
+    'stockWatch.services','angular-loading-bar', "stockWatch.directives","ngSanitize"]);
 
   angular.module('stockWatch.routes',['ui.router']);
 
@@ -35,16 +35,15 @@
   app.filter('shortName',function(){
     return function(name,length){
       var shortname = "";
-      var maxLength = length == undefined ? 12 : length;
+      var maxLength = length == undefined ? 25 : length;
+      name = name.replace("Limited","");
+      name = name.replace("limited","");
       if (name.length > maxLength) {
         names = name.split(" ");
         index = 0;
-        count = 0
-        while(shortname.length < maxLength && count < 5){
-          console.log(shortname, shortname.length);
+        while(shortname.length < maxLength && index < names.length){
           shortname+=names[index]+" ";
           index+=1;
-          count+=1;
         }
       } else {
         shortname = name;

@@ -113,7 +113,22 @@
         $scope.companySuggestion = [];
         $scope.timeframe = ['1m','3m','6m','1y','2y','5y','10y'];
         $scope.selectedTimeframe = 3;
-        $scope.chart_options = {showXLabels: 10};
+        $scope.chart_options = {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              time: {
+                  displayFormats: {
+                      month: 'MMM YYYY'
+                  },
+                  tooltipFormat: 'MMM D,YYYY'
+              },
+              ticks: {
+                maxTicksLimit: 3
+              }
+            }]
+          }
+        };
         $scope.labels = [];
         $scope.data = [[]];
 
@@ -142,12 +157,7 @@
             $scope.labels = [];
             $scope.data = [[]];
             response.data.dataset.data.forEach(function(item){
-              d = new Date(item[0]);
-              if(timeframe[timeframe.length - 1] == 'm'){
-                $scope.labels.push($filter('date')(d,'dd-MMM'));
-              } else {
-                $scope.labels.push($filter('date')(d, 'MMM-yy'));
-              }
+              $scope.labels.push(new Date(item[0]));
               $scope.data[0].push(item[5]);
             });
             $scope.loadingData = false;

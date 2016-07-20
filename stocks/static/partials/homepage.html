@@ -7,8 +7,13 @@
         <div class="card">
           <div class="col-xs-12 font-medium">{{index.indexName}}</div>
           <div class="row" ng-repeat="key in vm.index_keys">
-            <div class="col-xs-6 font-medium">{{key | regularForm }}</div>
-            <div class="col-xs-6 font-medium">{{index[key]}}</div>
+            <div class="col-xs-5 font-medium">{{key | regularForm }}</div>
+            <div ng-if="key == 'last'">
+              <div class="col-xs-7 font-medium" ng-class="{'positive-values': key == 'last' && index['percChange'] > 0, 'negative-values': key == 'last' && index['percChange'] < 0 }">{{index[key]}}({{index['percChange'] | number:2}}%)</div>
+            </div>
+            <div ng-if="key != 'last'">
+              <div class="col-xs-7 font-medium">{{index[key]}}</div>
+            </div>
           </div>
         </div>
       </div> 
@@ -30,7 +35,7 @@
           <td>{{ipo["issue_start_date"]}}</td>
           <td>{{ipo["issue_end_date"]}}</td>
           <td>{{ipo["security_type"]}}</td>
-          <td>{{ipo["status"]}}</td>
+          <td ng-class="{'positive-values': ipo['status'] == 'Active', 'negative-values': ipo['status'] != 'Active' }">{{ipo["status"]}}</td>
         </tr>
       </table>
     </div>

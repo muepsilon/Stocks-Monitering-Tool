@@ -7,6 +7,12 @@
 .font-bold {
   font-weight: 500; }
 
+.positive-values {
+  color: #288c2d; }
+
+.negative-values {
+  color: #c82828; }
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -54,5 +60,16 @@ section {
   background-color: #00abe2;
   color: white;
   width: 100%; }
+
+.chart-title {
+  border-bottom: 1px solid #e6e6e6;
+  background: #f7f7f7;
+  margin-bottom: 15px; }
+
+.chart-view {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #e6e6e6;
+  padding-bottom: 8px; }
 
 /*# sourceMappingURL=app.css.map */

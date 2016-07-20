@@ -1,12 +1,18 @@
 // Colors
 $grey-lighter : rgb(247,247,247);
 $grey-border: rgb(230,230,230);
+$green-font: rgb(40,140,45);
+$red-font: rgb(200,40,40); 
 
 // Padding
-
+$padding-small: 2px;
+$padding-medium: 4px;
+$padding-large: 8px;
 
 // Margins
-
+$margin-small: 5px;
+$margin-medium: 10px;
+$margin-large: 15px;
 
 // Font-weights
 $font-weight-medium: 400;
@@ -26,4 +32,10 @@ $border-radius-medium: 4px;
 }
 .font-bold{
   font-weight: $font-weight-bold;
+}
+.positive-values{
+  color: $green-font;
+}
+.negative-values{
+  color: $red-font;
 }

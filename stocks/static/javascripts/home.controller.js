@@ -13,7 +13,7 @@
     vm.ipo_data = [];
     vm.indices = [];
     index_list = ["nifty_50", "nifty_midcap_50","nifty_sml100_free","nifty_500"];
-    vm.index_keys = ["last","previousClose","percChange","yearHigh","yearLow"]
+    vm.index_keys = ["last","previousClose","yearHigh","yearLow"]
 
     Layout.get_ipo_data()
     .then(function successCallback(response){

@@ -1,0 +1,14 @@
+// CSS class related to company details view
+
+.chart-title{
+  border-bottom: $border-grey-lighter;
+  background: $grey-lighter;
+  margin-bottom: $margin-large;
+}
+
+.chart-view{
+  width: 100%;
+  overflow: auto;
+  border: $border-grey-lighter;
+  padding-bottom: $padding-large;
+}

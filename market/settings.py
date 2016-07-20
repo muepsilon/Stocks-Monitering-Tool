@@ -88,8 +88,7 @@ DATABASES = {
     }
 }
 CORS_ORIGIN_WHITELIST = (
-    'http://market.com',
-    'http://172.16.3.89'
+    'http://market.com'
 )
 
 
@@ -131,7 +130,8 @@ BOWER_INSTALLED_APPS = (
     'ngAnimate',
     'angular-cookies',
     'angular-sanitize',
-    'angular-chart.js',
+    'angular-chart.js#1.x',
+    'moment',
     )
 
 REST_FRAMEWORK = {
