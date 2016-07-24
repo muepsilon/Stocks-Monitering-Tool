@@ -3,6 +3,7 @@ import urllib, re, datetime, json, math
 import HTMLParser
 import sys
 import code
+from django.db.models import Max
 from django.views.decorators.http import require_http_methods
 from django.http import HttpResponse,HttpResponseBadRequest,HttpResponseNotFound
 from rest_framework_jwt.views import verify_jwt_token
@@ -68,6 +69,7 @@ def fetch_stocks(request):
   fields = ('market_cap','p_by_e','div_perc','eps','price_by_book','put_by_call')
   params_fields = ('market_cap','book_value','p_by_e','div_perc','industry_p_by_e','eps','price_by_book','div_yield_perc','put_by_call','params_type','company')
   filter_dict = {}
+  company_name_like = request.GET.get("name", None )
   value = ""
   for field in fields:
     value = request.GET.get(field,None)
@@ -81,6 +83,8 @@ def fetch_stocks(request):
           filter_dict["{0}__gte".format(field)] = float(val_list[1])
         else:
           filter_dict["{0}__lte".format(field)] = float(val_list[1])
+  if company_name_like != None and len(company_name_like) > 0:
+    filter_dict['company__name__contains'] = company_name_like
 
   if len(filter_dict.keys()) > 0:
     paramsDict = serializers.serialize("json",  FinanceParams.objects.filter(**filter_dict).order_by('company__name')[:100],use_natural_foreign_keys=True, fields=params_fields)
@@ -90,6 +94,38 @@ def fetch_stocks(request):
     response = HttpResponseBadRequest("Bad Request")
 
   return response
+
+@require_http_methods(["GET"])
+@authentication_classes((SessionAuthentication, BasicAuthentication))
+@permission_classes((IsAuthenticated,))
+def update_company_list(request):
+  # Format updated DB
+  last_created = Company.objects.all().aggregate(Max('created_at'))['created_at__max']
+  # Subtract 1 day to remove TZ effect
+  # Format last created
+  target_date = (last_created - datetime.timedelta(days=1)).strftime('%d-%b-%Y')
+  
+  nse = nsemodule.Nse()
+  response = nse.get_list_of_companies(target_date)
+  
+  if response['status'] == 200:
+    companies_list = json.loads(response['response'])
+    new_companies = []
+    for company in companies_list:
+      try:
+        obj = Company.objects.get(symbol = company[0].strip())
+      except ObjectDoesNotExist:
+        if len(company) == 2:
+          obj = Company.objects.create(symbol = company[0].strip(), name = company[1].strip())
+          new_companies.append(company[1])
+    if len(new_companies) > 0:
+      response = {"count": len(new_companies), "companies" : new_companies }
+    else:
+      response = {"msg": "No new companies added!"}
+  else:
+    response = {"msg" : "Unable to fetch data"}
+
+  return HttpResponse(json.dumps(response))
 
 def company_info(request,symbol):
   

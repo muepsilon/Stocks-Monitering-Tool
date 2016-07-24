@@ -78,22 +78,23 @@
       function logout () {
         return $http.post(BASE_URL + "api/accounts/logout/")
       }
-      function search_companies (data) {
+      function search_companies (data,companyName) {
         var min;
         var max;
-        query = ""
+        companyName = companyName == null ? "" : companyName;
+        query = "name="+companyName;
         for (var key in data) {
           min = data[key][0];
           max = data[key][1];
           if (min == null ){
             if (max != null){
-              query += key + "=2," + max.toString()+"&";
+              query += "&" + key + "=2," + max.toString();
             }
           } else {
             if (max == null){
-              query += key + "=1," + min.toString()+"&";
+              query += "&" + key + "=1," + min.toString();
             } else {
-              query += key + "=0," + min.toString() + "," + max.toString()+"&";
+              query += "&" + key + "=0," + min.toString() + "," + max.toString();
             }
           }
         };

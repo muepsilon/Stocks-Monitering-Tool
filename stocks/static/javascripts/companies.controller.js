@@ -17,7 +17,7 @@
     $scope.maxSize = 5;
     $scope.bigTotalItems = 1;
     $scope.bigCurrentPage = 1;
-
+    vm.companyquery = null;
     vm.filters = {
       'price_by_book' : "Price/Book", 
       'eps' : "Earning/Share", 
@@ -29,7 +29,7 @@
     
     vm.fields = {
       'company': "Company",
-      'market_cap': "Market Capital",
+      'market_cap': "Market Capital(Cr)",
       "book_value": "Book Value",
       'price_by_book' : "Price/Book", 
       'eps' : "Earning/Share", 
@@ -46,8 +46,7 @@
     // Function Blocks
 
     function getStocks(){
-      console.log(vm.filter_values);
-      Layout.search_companies(vm.filter_values)
+      Layout.search_companies(vm.filter_values, vm.companyquery)
       .then(function successCallback (response) {
         vm.stocks = response.data;
         for (var i = vm.stocks.length - 1; i >= 0; i--) {

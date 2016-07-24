@@ -10,6 +10,12 @@
         </div>
       </div>
       <div class="col-xs-12">
+        <div class="form-group col-xs-6">
+          <div class="input-group">
+            <div class="input-group-addon">Company Name</div>
+            <input type="text" class="form-control" placeholder="E.g. LIC Housing" ng-model="vm.companyquery">
+          </div>
+        </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </div>
     </form>
@@ -23,7 +29,7 @@
         <tr ng-repeat = "stock in vm.stocks.slice((bigCurrentPage - 1)*items_per_page,bigCurrentPage*items_per_page)"> 
           <td ng-repeat="(key,value) in vm.fields">
             <span ng-if="key == 'company'">
-              <a class="alink" ui-sref='company({name: (stock[key] | spaceless)})' target="_blank">{{stock[key] | shortName: '22'}}</a>
+              <a class="alink" ui-sref='company({name: (stock[key] | spaceless)})' target="_blank">{{stock[key] | shortName: '22'}}({{stock.params_type}})</a>
             </span>
             <span ng-if="key != 'company'">{{stock[key]}}</span>
           </td>

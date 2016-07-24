@@ -96,6 +96,7 @@ urlpatterns = [
     url(r'^api/company/find/$',views.getCompanyNames, name="get_company_names"),
     url(r'^api/fetch_stocks/$',views.fetch_stocks,name='fetch_stocks'),
     url(r'^api/company/(?P<symbol>[a-zA-Z]+)$',views.company_info, name="comapany_info"),
+    url(r'^api/updateCompanyDB/$',views.update_company_list, name="update_company_list"),
     url(r'^api/latestprice/stock/$',views.portfolio_stock, name="portfolio_stock"),
     url(r'^api/latestprice/stocks/$',views.portfolio, name="portfolio"),
     url(r'^api/latestprice/watchstocks/$',views.watchlist, name="watchList"),
