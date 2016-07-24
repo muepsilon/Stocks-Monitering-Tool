@@ -128,6 +128,7 @@ BOWER_INSTALLED_APPS = (
     "bootstrap",
     "angular-loading-bar",
     'ngAnimate',
+    'angular-bootstrap',
     'angular-cookies',
     'angular-sanitize',
     'angular-chart.js#1.x',

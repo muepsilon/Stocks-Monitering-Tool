@@ -36,6 +36,12 @@
         params: { id: null },
         controller: "companyDetailsController",
         controllerAs: 'vm'
+      })
+      .state('companies',{
+        url: "/company",
+        templateUrl: "/static/partials/companies.html",
+        controller: "companiesController",
+        controllerAs: 'vm'
       });
 
     $locationProvider.html5Mode({

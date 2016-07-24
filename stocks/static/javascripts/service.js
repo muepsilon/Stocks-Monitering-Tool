@@ -28,7 +28,8 @@
         signup:           signup,
         logout:           logout,
         get_ipo_data:     get_ipo_data,
-        duplicateCheck:   duplicateCheck
+        duplicateCheck:   duplicateCheck,
+        search_companies: search_companies
       };
 
       return Layout;
@@ -76,6 +77,27 @@
       }
       function logout () {
         return $http.post(BASE_URL + "api/accounts/logout/")
+      }
+      function search_companies (data) {
+        var min;
+        var max;
+        query = ""
+        for (var key in data) {
+          min = data[key][0];
+          max = data[key][1];
+          if (min == null ){
+            if (max != null){
+              query += key + "=2," + max.toString()+"&";
+            }
+          } else {
+            if (max == null){
+              query += key + "=1," + min.toString()+"&";
+            } else {
+              query += key + "=0," + min.toString() + "," + max.toString()+"&";
+            }
+          }
+        };
+        return $http.get( BASE_URL + "api/fetch_stocks/?"+query)
       }
       function duplicateCheck(credential){
         var query = "";

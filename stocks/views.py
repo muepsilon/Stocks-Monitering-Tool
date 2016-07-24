@@ -1,14 +1,18 @@
 from django.shortcuts import render
 import urllib, re, datetime, json, math
 import HTMLParser
+import sys
+import code
 from django.views.decorators.http import require_http_methods
-from django.http import HttpResponse,HttpResponseBadRequest
+from django.http import HttpResponse,HttpResponseBadRequest,HttpResponseNotFound
 from rest_framework_jwt.views import verify_jwt_token
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.core.exceptions import ObjectDoesNotExist
 from nsetools import Nse
 import nsemodule
+from django.shortcuts import get_object_or_404
 from django.core import serializers
-from stocks.models import Stock, CompanyList, WatchStock
+from stocks.models import Stock, Company, WatchStock, FinanceParams
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -23,9 +27,9 @@ def index(request, page_slug = None):
 def getCompanyNames(request):
    
   query = request.GET.get('query','').encode('ascii','ignore')
-  companyList = CompanyList.objects.filter(name__contains = query)[0:5]
-  companyListDict = serializers.serialize("json", companyList)
-  filteredList = [ item['fields'] for item in json.loads(companyListDict)]
+  company = Company.objects.filter(name__contains = query)[0:5]
+  companyDict = serializers.serialize("json", company)
+  filteredList = [ item['fields'] for item in json.loads(companyDict)]
   return HttpResponse(json.dumps(filteredList))
 
 def fetch_ipo_info(request):
@@ -33,10 +37,64 @@ def fetch_ipo_info(request):
   response = nse.fetch_ipo_info()
   return HttpResponse(response['response'])
 
+@require_http_methods(["GET"])
+def fetch_or_return_company_key_ratios(request):
+  stock = get_object_or_404(Company, symbol = request.GET.get('symbol', None))
+  fields = ('market_cap','book_value','p_by_e','div_perc','industry_p_by_e','eps','price_by_book','div_yield_perc','put_by_call','params_type')
+  
+  params = FinanceParams.objects.filter(company = stock)
+
+  if len(params) != 0 :
+    paramsDict = serializers.serialize("json", params , fields = fields)
+    filteredList = {stock.symbol : [item['fields'] for item in json.loads(paramsDict)]}
+    response = HttpResponse(json.dumps(filteredList))
+  else:
+    nse = nsemodule.Nse()
+    f_response = nse.get_finance_params(stock.symbol)
+    if f_response['status'] == 200:
+      params = f_response['response']
+      obj1,create1 = FinanceParams.objects.update_or_create(company = stock, **params['standalone'])
+      obj2,create2 = FinanceParams.objects.update_or_create(company = stock, params_type = 'C', **params['consolidated'])
+      paramsDict = serializers.serialize("json", [obj1,obj2,], fields = fields)
+      filteredList = {stock.symbol : [item['fields'] for item in json.loads(paramsDict)]}
+      response = HttpResponse(json.dumps(filteredList))
+    else:
+      response = HttpResponseNotFound('Unable to fetch Params')
+
+  return response
+
+@require_http_methods(["GET"])
+def fetch_stocks(request):
+  fields = ('market_cap','p_by_e','div_perc','eps','price_by_book','put_by_call')
+  params_fields = ('market_cap','book_value','p_by_e','div_perc','industry_p_by_e','eps','price_by_book','div_yield_perc','put_by_call','params_type','company')
+  filter_dict = {}
+  value = ""
+  for field in fields:
+    value = request.GET.get(field,None)
+    if value != None:
+      val_list = value.split(",")
+      if len(val_list) == 3:
+        filter_dict["{0}__lte".format(field)] = float(val_list[2])
+        filter_dict["{0}__gte".format(field)] = float(val_list[1])
+      elif len(val_list) == 2:
+        if int(val_list[0]) == 1 :
+          filter_dict["{0}__gte".format(field)] = float(val_list[1])
+        else:
+          filter_dict["{0}__lte".format(field)] = float(val_list[1])
+
+  if len(filter_dict.keys()) > 0:
+    paramsDict = serializers.serialize("json",  FinanceParams.objects.filter(**filter_dict).order_by('company__name')[:100],use_natural_foreign_keys=True, fields=params_fields)
+    filteredList =  [ item['fields'] for item in json.loads(paramsDict) ]
+    response = HttpResponse(json.dumps(filteredList))
+  else:
+    response = HttpResponseBadRequest("Bad Request")
+
+  return response
+
 def company_info(request,symbol):
   
   try:
-    company = CompanyList.objects.get(symbol = symbol)
+    company = Company.objects.get(symbol = symbol)
     isValid = True
   except:
     isValid = False

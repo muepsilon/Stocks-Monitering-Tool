@@ -31,6 +31,13 @@ body{
 .form-group input {
   width: 100% !important;
 }
+.form-horizontal .form-group {
+  margin-right: 0;
+  margin-left: 0;
+}
+.input-group .form-control{
+  border-radius: 0px;
+}
 .navbar-form{
   width: 100% !important;
 }
