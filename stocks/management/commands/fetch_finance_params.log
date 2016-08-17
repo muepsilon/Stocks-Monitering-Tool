@@ -14588,3 +14588,283 @@
 2016-07-23 14:37:21,679 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=DYNATECH&type=1&format=json HTTP/1.1" 200 249
 2016-07-23 14:37:21,683 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
 2016-07-23 14:37:21,696 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=dynacons%20technologies%20&type=1&format=json HTTP/1.1" 200 249
+2016-07-26 07:19:24,771 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:29,138 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PDSMFL&type=1&format=json HTTP/1.1" 200 616
+2016-07-26 07:19:29,142 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:37,341 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=pds%20multinational%20fashions%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:37,951 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:38,181 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=FRLDVR&type=1&format=json HTTP/1.1" 200 244
+2016-07-26 07:19:38,186 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:38,508 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=future%20retail%20&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:19:38,521 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:38,768 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=NATHBIOGEN&type=1&format=json HTTP/1.1" 200 351
+2016-07-26 07:19:38,772 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:39,069 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=nath%20bio-genes%20(india)%20&type=1&format=json HTTP/1.1" 200 615
+2016-07-26 07:19:39,108 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:39,438 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=J&KBANK&type=1&format=json HTTP/1.1" 200 697
+2016-07-26 07:19:39,446 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:40,899 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=the%20jammu%20and%20kashmir%20bank%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:40,963 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:41,169 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=HCL-INSYS&type=1&format=json HTTP/1.1" 200 271
+2016-07-26 07:19:41,174 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:41,364 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computershardware/hclinfosystems/HCL HTTP/1.1" 301 26
+2016-07-26 07:19:41,435 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computers-hardware/hclinfosystems/HCL HTTP/1.1" 200 53769
+2016-07-26 07:19:42,854 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:43,145 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PALREDTECH&type=1&format=json HTTP/1.1" 200 258
+2016-07-26 07:19:43,150 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:43,488 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=palred%20technologies%20&type=1&format=json HTTP/1.1" 200 285
+2016-07-26 07:19:43,514 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:43,922 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=FRL&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:19:43,927 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:44,216 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=future%20retail%20&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:19:44,506 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:45,212 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SKSMICRO&type=1&format=json HTTP/1.1" 200 254
+2016-07-26 07:19:45,217 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:45,509 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=sks%20microfinance%20&type=1&format=json HTTP/1.1" 200 254
+2016-07-26 07:19:45,581 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:45,898 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=NECCLTD&type=1&format=json HTTP/1.1" 200 519
+2016-07-26 07:19:45,902 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:46,198 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=north%20eastern%20carrying%20corporation%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:46,242 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:46,749 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ARROWCOAT&type=1&format=json HTTP/1.1" 200 242
+2016-07-26 07:19:46,752 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:47,089 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=arrow%20coated%20products%20&type=1&format=json HTTP/1.1" 200 242
+2016-07-26 07:19:47,158 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:47,500 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=AGARIND&type=1&format=json HTTP/1.1" 200 569
+2016-07-26 07:19:47,504 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:47,979 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=agarwal%20industrial%20corporation%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:48,005 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:48,491 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ARIHANT&type=1&format=json HTTP/1.1" 200 695
+2016-07-26 07:19:48,498 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:48,829 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=arihant%20foundations%20and%20housing%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:48,835 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:49,181 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SHK&type=1&format=json HTTP/1.1" 200 334
+2016-07-26 07:19:49,185 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:49,515 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=s%20h%20kelkar%20and%20company%20&type=1&format=json HTTP/1.1" 200 618
+2016-07-26 07:19:49,543 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:49,932 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SYMBOL&type=1&format=json HTTP/1.1" 200 564
+2016-07-26 07:19:49,936 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:50,641 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=name%20of%20company&type=1&format=json HTTP/1.1" 200 600
+2016-07-26 07:19:50,673 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:50,999 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PREMIER&type=1&format=json HTTP/1.1" 200 685
+2016-07-26 07:19:51,007 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:51,354 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=premier%20&type=1&format=json HTTP/1.1" 200 685
+2016-07-26 07:19:51,464 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:51,984 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ALSTOMT&D&type=1&format=json HTTP/1.1" 200 449
+2016-07-26 07:19:51,988 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:52,477 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=alstom%20tandd%20india%20&type=1&format=json HTTP/1.1" 200 327
+2016-07-26 07:19:52,649 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:53,009 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SHIRPUR-G&type=1&format=json HTTP/1.1" 200 283
+2016-07-26 07:19:53,013 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:53,414 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/miningminerals/shirpurgoldrefinery/AGR HTTP/1.1" 301 26
+2016-07-26 07:19:54,280 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/mining-minerals/shirpurgoldrefinery/AGR HTTP/1.1" 200 51606
+2016-07-26 07:19:55,643 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:55,954 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MCDOWELL-N&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:19:55,958 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:56,180 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/breweriesdistilleries/unitedspirits/US HTTP/1.1" 301 26
+2016-07-26 07:19:56,819 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/breweries-distilleries/unitedspirits/US HTTP/1.1" 200 53721
+2016-07-26 07:19:57,574 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:57,830 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=AIFL&type=1&format=json HTTP/1.1" 200 579
+2016-07-26 07:19:57,835 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:58,147 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ashapura%20intimates%20fashion%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:19:58,190 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:58,493 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=LALPATHLAB&type=1&format=json HTTP/1.1" 200 365
+2016-07-26 07:19:58,497 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:58,860 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=dr.%20lal%20path%20labs%20.&type=1&format=json HTTP/1.1" 200 468
+2016-07-26 07:19:58,873 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:59,139 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=DYNATECH&type=1&format=json HTTP/1.1" 200 249
+2016-07-26 07:19:59,143 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:59,336 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=dynacons%20technologies%20&type=1&format=json HTTP/1.1" 200 249
+2016-07-26 07:19:59,389 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:19:59,598 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ABMINTLTD&type=1&format=json HTTP/1.1" 200 266
+2016-07-26 07:19:59,603 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:00,731 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/miscellaneous/abminternational/ABM02 HTTP/1.1" 200 None
+2016-07-26 07:20:01,295 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:01,602 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ADHUNIKIND&type=1&format=json HTTP/1.1" 200 533
+2016-07-26 07:20:01,605 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:02,214 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=adhunik%20industries%20&type=1&format=json HTTP/1.1" 200 573
+2016-07-26 07:20:02,219 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:02,725 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ALBERTDAVD&type=1&format=json HTTP/1.1" 200 272
+2016-07-26 07:20:02,729 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:03,429 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/pharmaceuticals/albertdavid/AD01 HTTP/1.1" 200 50207
+2016-07-26 07:20:04,135 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:04,362 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ARMANFIN&type=1&format=json HTTP/1.1" 200 288
+2016-07-26 07:20:04,369 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:04,609 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/financeleasinghirepurchase/armanfinancialservices/AFS04 HTTP/1.1" 301 26
+2016-07-26 07:20:04,716 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/finance-leasing-hire-purchase/armanfinancialservices/AFS04 HTTP/1.1" 200 50106
+2016-07-26 07:20:05,544 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:05,787 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ARROWGREEN&type=1&format=json HTTP/1.1" 200 269
+2016-07-26 07:20:05,792 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:05,930 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/plastics/arrowgreentech/ACP HTTP/1.1" 200 50528
+2016-07-26 07:20:06,780 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:08,007 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=ASPINWALL&type=1&format=json HTTP/1.1" 200 271
+2016-07-26 07:20:08,011 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:08,731 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/miscellaneous/aspinwallcompany/AC27 HTTP/1.1" 200 None
+2016-07-26 07:20:09,381 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:09,628 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=BHARATFIN&type=1&format=json HTTP/1.1" 200 281
+2016-07-26 07:20:09,634 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:09,785 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/financegeneral/bharatfinancialinclusion/SM11 HTTP/1.1" 301 26
+2016-07-26 07:20:09,865 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/finance-general/bharatfinancialinclusion/SM11 HTTP/1.1" 200 53611
+2016-07-26 07:20:10,720 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:14,198 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=BLS&type=1&format=json HTTP/1.1" 200 264
+2016-07-26 07:20:14,202 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:15,322 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/miscellaneous/blsinternationalservices/BLS HTTP/1.1" 200 43946
+2016-07-26 07:20:16,367 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:16,658 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=COMPINFO&type=1&format=json HTTP/1.1" 200 273
+2016-07-26 07:20:16,662 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:17,617 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computershardware/compuageinfocom/CI29 HTTP/1.1" 301 26
+2016-07-26 07:20:17,781 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computers-hardware/compuageinfocom/CI29 HTTP/1.1" 200 49504
+2016-07-26 07:20:18,548 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:18,802 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=CONTROLPR&type=1&format=json HTTP/1.1" 200 265
+2016-07-26 07:20:18,807 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:19,101 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/trading/controlprint/CP11 HTTP/1.1" 200 51921
+2016-07-26 07:20:19,692 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:19,929 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=CROMPTON&type=1&format=json HTTP/1.1" 200 390
+2016-07-26 07:20:19,934 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:20,156 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/electricals/cromptongreavesconsumerelectrical/CGC01 HTTP/1.1" 200 50341
+2016-07-26 07:20:20,835 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:21,071 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=DAMODARIND&type=1&format=json HTTP/1.1" 200 285
+2016-07-26 07:20:21,076 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:21,265 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textilesspinningsyntheticblended/damodarindustries/DT HTTP/1.1" 301 26
+2016-07-26 07:20:21,344 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textiles-spinning-synthetic-blended/damodarindustries/DT HTTP/1.1" 200 49857
+2016-07-26 07:20:22,008 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:22,266 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=DIGJAMLTD&type=1&format=json HTTP/1.1" 200 271
+2016-07-26 07:20:22,271 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:22,429 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textileswoollenworsted/digjam/D05 HTTP/1.1" 301 26
+2016-07-26 07:20:22,516 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textiles-woollen-worsted/digjam/D05 HTTP/1.1" 200 51586
+2016-07-26 07:20:23,297 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:23,771 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=DUCON&type=1&format=json HTTP/1.1" 200 275
+2016-07-26 07:20:23,775 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:23,982 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computerssoftware/duconinfratechnologies/DT9 HTTP/1.1" 301 26
+2016-07-26 07:20:24,092 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computers-software/duconinfratechnologies/DT9 HTTP/1.1" 200 49383
+2016-07-26 07:20:24,810 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:25,050 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=EQUITAS&type=1&format=json HTTP/1.1" 200 271
+2016-07-26 07:20:25,054 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:25,206 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/financegeneral/equitasholdings/EH03 HTTP/1.1" 301 26
+2016-07-26 07:20:25,290 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/finance-general/equitasholdings/EH03 HTTP/1.1" 200 53226
+2016-07-26 07:20:26,073 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:26,279 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=FEL&type=1&format=json HTTP/1.1" 200 339
+2016-07-26 07:20:26,284 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:26,488 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/retail/futureenterprises/PR03 HTTP/1.1" 200 53204
+2016-07-26 07:20:27,122 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:27,505 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=FELDVR&type=1&format=json HTTP/1.1" 200 575
+2016-07-26 07:20:27,508 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:34,472 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=future%20enterprises%20&type=1&format=json HTTP/1.1" 200 304
+2016-07-26 07:20:34,980 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:35,131 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/retail/futureenterprisesdvr/PRI HTTP/1.1" 200 49794
+2016-07-26 07:20:35,814 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:36,361 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=GPTINFRA&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:20:36,365 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:36,490 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/constructioncontractingcivil/gptinfraprojects/GPT01 HTTP/1.1" 301 26
+2016-07-26 07:20:36,563 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/construction-contracting-civil/gptinfraprojects/GPT01 HTTP/1.1" 200 50437
+2016-07-26 07:20:37,326 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:37,514 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=GROBTEA&type=1&format=json HTTP/1.1" 200 273
+2016-07-26 07:20:37,519 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:37,837 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/plantationsteacoffee/thegrobteacompany/TGT HTTP/1.1" 301 26
+2016-07-26 07:20:38,982 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/plantations-tea-coffee/thegrobteacompany/TGT HTTP/1.1" 200 None
+2016-07-26 07:20:39,605 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:39,864 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=LSIL&type=1&format=json HTTP/1.1" 200 277
+2016-07-26 07:20:39,868 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:39,998 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/steelmediumsmall/lloydssteelsindustries/LSI02 HTTP/1.1" 301 26
+2016-07-26 07:20:40,067 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/steel-medium-small/lloydssteelsindustries/LSI02 HTTP/1.1" 200 48015
+2016-07-26 07:20:40,756 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:40,948 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=LTI&type=1&format=json HTTP/1.1" 200 276
+2016-07-26 07:20:40,953 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:41,095 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computerssoftware/larsentoubroinfotech/LI12 HTTP/1.1" 301 26
+2016-07-26 07:20:41,171 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computers-software/larsentoubroinfotech/LI12 HTTP/1.1" 200 49518
+2016-07-26 07:20:41,822 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:42,032 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MAHASTEEL&type=1&format=json HTTP/1.1" 200 283
+2016-07-26 07:20:42,036 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:42,189 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/steelcrhrstrips/mahamayasteelindustries/MSI11 HTTP/1.1" 301 26
+2016-07-26 07:20:42,273 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/steel-cr-hr-strips/mahamayasteelindustries/MSI11 HTTP/1.1" 200 50812
+2016-07-26 07:20:43,045 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:43,252 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MAXINDIA&type=1&format=json HTTP/1.1" 200 329
+2016-07-26 07:20:43,256 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:43,442 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/miscellaneous/maxindia/MIL16 HTTP/1.1" 200 48726
+2016-07-26 07:20:44,066 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:44,329 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MAXVIL&type=1&format=json HTTP/1.1" 200 317
+2016-07-26 07:20:44,333 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:44,552 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=max%20ventures%20and%20industries%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:20:44,560 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:44,795 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MGL&type=1&format=json HTTP/1.1" 200 261
+2016-07-26 07:20:44,800 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:44,957 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/refineries/mahanagargas/MG02 HTTP/1.1" 200 48779
+2016-07-26 07:20:45,631 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:45,838 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=MOLDTECH&type=1&format=json HTTP/1.1" 200 279
+2016-07-26 07:20:45,842 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:46,025 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/packaging/moldtektechnologies/MTT01 HTTP/1.1" 200 51472
+2016-07-26 07:20:46,619 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:46,817 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=NAGAFERT&type=1&format=json HTTP/1.1" 200 280
+2016-07-26 07:20:46,821 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:46,972 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/fertilisers/nagarjunafertiliserschemicals/NFC HTTP/1.1" 200 50878
+2016-07-26 07:20:47,668 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:47,949 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PALREDTEC&type=1&format=json HTTP/1.1" 200 285
+2016-07-26 07:20:47,953 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:48,221 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computerssoftwaremediumsmall/palredtechnologies/FS05 HTTP/1.1" 301 26
+2016-07-26 07:20:48,299 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/computers-software-medium-small/palredtechnologies/FS05 HTTP/1.1" 200 52373
+2016-07-26 07:20:49,004 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:49,257 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PARAGMILK&type=1&format=json HTTP/1.1" 200 464
+2016-07-26 07:20:49,261 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:50,924 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=parag%20milk%20foods%20&type=1&format=json HTTP/1.1" 200 276
+2016-07-26 07:20:50,929 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:20:51,348 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/foodprocessing/paragmilkfoods/PMF01 HTTP/1.1" 301 26
+2016-07-26 07:20:51,609 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/food-processing/paragmilkfoods/PMF01 HTTP/1.1" 200 49348
+2016-07-26 07:20:52,556 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:01,297 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PINCON&type=1&format=json HTTP/1.1" 200 314
+2016-07-26 07:21:01,703 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:03,550 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=pincon%20spirit%20&type=1&format=json HTTP/1.1" 200 268
+2016-07-26 07:21:03,554 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:03,695 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/breweriesdistilleries/pinconspirit/PS18 HTTP/1.1" 301 26
+2016-07-26 07:21:03,808 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/breweries-distilleries/pinconspirit/PS18 HTTP/1.1" 200 50263
+2016-07-26 07:21:04,438 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:07,030 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=POKARNA&type=1&format=json HTTP/1.1" 200 264
+2016-07-26 07:21:07,034 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:07,193 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/ceramicsgranite/pokarna/PL06 HTTP/1.1" 301 26
+2016-07-26 07:21:07,291 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/ceramics-granite/pokarna/PL06 HTTP/1.1" 200 51601
+2016-07-26 07:21:08,047 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:08,270 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=PREMEXPLN&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:21:08,274 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:08,577 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=premier%20explosives%20&type=1&format=json HTTP/1.1" 200 273
+2016-07-26 07:21:08,581 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:08,754 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/chemicals/premierexplosives/PE02 HTTP/1.1" 200 50412
+2016-07-26 07:21:09,354 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:09,558 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=QUESS&type=1&format=json HTTP/1.1" 200 261
+2016-07-26 07:21:09,563 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:09,708 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/engineering/quesscorp/QC HTTP/1.1" 200 49564
+2016-07-26 07:21:10,340 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:10,637 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SALONA&type=1&format=json HTTP/1.1" 200 276
+2016-07-26 07:21:10,641 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:11,231 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textilesspinningcottonblended/salonacotspin/SC48 HTTP/1.1" 301 26
+2016-07-26 07:21:12,050 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/textiles-spinning-cotton-blended/salonacotspin/SC48 HTTP/1.1" 200 50361
+2016-07-26 07:21:12,719 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:13,175 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SETCO&type=1&format=json HTTP/1.1" 200 533
+2016-07-26 07:21:13,179 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:13,418 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=setco%20automotive%20&type=1&format=json HTTP/1.1" 200 26
+2016-07-26 07:21:13,424 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:13,670 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SHRIPISTON&type=1&format=json HTTP/1.1" 200 276
+2016-07-26 07:21:13,674 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:13,810 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/autoancillaries/shrirampistonsrings/SPR02 HTTP/1.1" 301 26
+2016-07-26 07:21:13,885 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/auto-ancillaries/shrirampistonsrings/SPR02 HTTP/1.1" 200 43284
+2016-07-26 07:21:14,462 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:14,695 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=SOMICONVEY&type=1&format=json HTTP/1.1" 200 276
+2016-07-26 07:21:14,700 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:14,840 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/rubber/somiconveyorbeltings/SCB HTTP/1.1" 200 49746
+2016-07-26 07:21:15,416 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:15,695 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=THYROCARE&type=1&format=json HTTP/1.1" 200 347
+2016-07-26 07:21:15,699 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:15,890 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/hospitalsmedicalservices/thyrocaretechnologies/TT16 HTTP/1.1" 301 26
+2016-07-26 07:21:15,990 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/hospitals-medical-services/thyrocaretechnologies/TT16 HTTP/1.1" 200 51644
+2016-07-26 07:21:16,709 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:16,923 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=UJJIVAN&type=1&format=json HTTP/1.1" 200 282
+2016-07-26 07:21:16,928 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:17,106 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/financegeneral/ujjivanfinancialservices/UFS01 HTTP/1.1" 301 26
+2016-07-26 07:21:17,194 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/finance-general/ujjivanfinancialservices/UFS01 HTTP/1.1" 200 53347
+2016-07-26 07:21:18,509 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:18,753 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=UVSL&type=1&format=json HTTP/1.1" 200 474
+2016-07-26 07:21:18,756 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:18,959 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=uttam%20value%20steels%20&type=1&format=json HTTP/1.1" 200 277
+2016-07-26 07:21:18,965 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:19,196 - requests.packages.urllib3.connectionpool - DEBUG - "GET /mccode/common/autosuggesion.php?query=VIJIFIN&type=1&format=json HTTP/1.1" 200 267
+2016-07-26 07:21:19,200 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): www.moneycontrol.com
+2016-07-26 07:21:19,479 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/financegeneral/vijifinance/VF08 HTTP/1.1" 301 26
+2016-07-26 07:21:20,959 - requests.packages.urllib3.connectionpool - DEBUG - "GET /india/stockpricequote/finance-general/vijifinance/VF08 HTTP/1.1" 200 None

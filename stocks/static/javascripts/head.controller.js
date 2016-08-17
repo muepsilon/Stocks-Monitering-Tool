@@ -17,11 +17,11 @@
     $scope.$watch(function(){ return $rootScope.portfolio_change}, function(){
       $scope.pagetitle = "Portfolio " + $rootScope.portfolio_change;
       // Notification system
-      if ($rootScope.portfolioChange != null && $rootScope.portfolioChange.length > 2){
+      if ($rootScope.portfolio_change != null && $rootScope.portfolio_change.length > 2){
         vm.portfolioChange = $rootScope.portfolio_change.split("/").map(Number); 
         vm.baseChange = Math.abs(vm.portfolioChange[1]) > 1000 ? vm.portfolioChange[1] : 1000;
 
-        if (Math.abs((vm.portfolioChange[0]-vm.dailyChangeLastVal)/vm.baseChange)*100 > 10) {
+        if (Math.abs((vm.portfolioChange[0]-vm.dailyChangeLastVal)/vm.baseChange)*100 > 4) {
           console.log(vm.portfolioChange[0],vm.dailyChangeLastVal, vm.baseChange);
           
           if (Notification.permission == "granted") {

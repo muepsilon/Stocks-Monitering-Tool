@@ -276,6 +276,15 @@
     }
     function selectCompany(item){
       vm.formdata.symbol = item.symbol;
+      Layout.get_stock_price(item.symbol)
+      .then(function successCallback (response) {
+        data = response.data[0];
+        vm.formdata.lastPrice = data.lastPrice;
+        vm.formdata.trigger_price_high = Math.ceil(data.lastPrice*10.5)/10;
+        vm.formdata.trigger_price_low = Math.floor(data.lastPrice*9.5)/10;
+      }, function failureCallback (response) {
+        // body...
+      });
       vm.formdata.company_name = item.name;
       vm.companySuggestion = [];
     }

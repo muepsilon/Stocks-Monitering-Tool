@@ -98,6 +98,7 @@ urlpatterns = [
     url(r'^api/company/(?P<symbol>[a-zA-Z]+)$',views.company_info, name="comapany_info"),
     url(r'^api/updateCompanyDB/$',views.update_company_list, name="update_company_list"),
     url(r'^api/latestprice/stock/$',views.portfolio_stock, name="portfolio_stock"),
+    url(r'^api/latestprice/company/$',views.get_stock_price, name = "Stock Price"),
     url(r'^api/latestprice/stocks/$',views.portfolio, name="portfolio"),
     url(r'^api/latestprice/watchstocks/$',views.watchlist, name="watchList"),
     url(r'^api/latestprice/indices/$',views.get_index_info, name="index quotes"),

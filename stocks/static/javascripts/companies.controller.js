@@ -13,6 +13,7 @@
     vm.showPage = true;
     vm.stocks = [];
     vm.getStocks = getStocks;
+    vm.clearFilters = clearFilters;
     $scope.items_per_page = 10;
     $scope.maxSize = 5;
     $scope.bigTotalItems = 1;
@@ -44,7 +45,12 @@
       vm.filter_values[key] = [null,null]
     }
     // Function Blocks
-
+    function clearFilters(){
+      // Reset all fitler values
+      for (var key in vm.filters ) {
+      vm.filter_values[key] = [null,null]
+    }
+    }
     function getStocks(){
       Layout.search_companies(vm.filter_values, vm.companyquery)
       .then(function successCallback (response) {

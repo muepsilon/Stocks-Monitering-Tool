@@ -9,7 +9,7 @@
 
     function Layout($http){
 
-      var BASE_URL = "http://market.com:8000/";
+      var BASE_URL = "http://localhost:8000/";
 
       var Layout = {
         get_stocks :      get_stocks,
@@ -29,13 +29,18 @@
         logout:           logout,
         get_ipo_data:     get_ipo_data,
         duplicateCheck:   duplicateCheck,
-        search_companies: search_companies
+        search_companies: search_companies,
+        get_stock_price: get_stock_price
       };
 
       return Layout;
 
       function get_stocks(){
         return $http.get(BASE_URL + "api/latestprice/stocks");
+      }
+
+      function get_stock_price (symbol) {
+        return $http.get(BASE_URL + "api/latestprice/company/?symbol="+symbol)
       }
       function get_indices () {
         return $http.get(BASE_URL + "api/latestprice/indices/");

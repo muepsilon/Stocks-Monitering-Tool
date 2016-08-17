@@ -9,7 +9,7 @@
     </tr>
     <tr ng-repeat = "stock in vm.stocksWatchList">
       <td><a class="alink" ui-sref='company({name: (stock.companyName | spaceless), id: stock.id })'>{{stock.companyName | shortName: '22'}}</a></td>
-      <td>{{stock.lastPrice}}</td>
+      <td ng-class="{positive: stock.lastPrice > stock.previousClose, negative: stock.lastPrice < stock.previousClose}">{{stock.lastPrice}}</td>
       <td>{{stock.trigger_price_low}}/{{stock.trigger_price_high}}</td>
       <td>{{stock.low52}}/{{stock.high52}}</td>
       <td>{{stock.dayLow}}/{{stock.dayHigh}}</td>

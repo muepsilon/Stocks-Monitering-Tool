@@ -262,6 +262,27 @@ def portfolio_stock(request):
 @api_view(['GET'])
 @authentication_classes((SessionAuthentication, BasicAuthentication))
 @permission_classes((IsAuthenticated,))
+def get_stock_price(request):
+  symbol = request.GET.get('symbol',None)
+  response = None
+  status = 204
+  if symbol != None:
+    try:
+      stock = Company.objects.get(symbol = symbol)
+      nse = nsemodule.Nse()
+      keys = ['lastPrice','previousClose','companyName','symbol','low52','high52','dayHigh','dayLow']
+      symbols = [(HTMLParser.HTMLParser().unescape(stock.symbol)).encode('ascii','ignore')]
+      response = json.dumps(nse.get_equity_quotes(symbols,keys)['response'])
+      status = nse.get_equity_quotes(symbols,keys)['status'] 
+    except ObjectDoesNotExist:
+      response = "Bad Request"
+      status = 400
+
+  return HttpResponse(response,status = status) 
+
+@api_view(['GET'])
+@authentication_classes((SessionAuthentication, BasicAuthentication))
+@permission_classes((IsAuthenticated,))
 def watchlist(request):
 
   stocks = WatchStock.objects.filter(user=request.user)
