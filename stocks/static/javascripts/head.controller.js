@@ -19,9 +19,9 @@
       // Notification system
       if ($rootScope.portfolio_change != null && $rootScope.portfolio_change.length > 2){
         vm.portfolioChange = $rootScope.portfolio_change.split("/").map(Number); 
-        vm.baseChange = Math.abs(vm.portfolioChange[1]) > 1000 ? vm.portfolioChange[1] : 1000;
+        vm.baseChange = Math.abs(vm.portfolioChange[1]) > 2000 ? vm.portfolioChange[1] : 2000;
 
-        if (Math.abs((vm.portfolioChange[0]-vm.dailyChangeLastVal)/vm.baseChange)*100 > 4) {
+        if (Math.abs((vm.portfolioChange[0]-vm.dailyChangeLastVal)/vm.baseChange)*100 > 10) {
           console.log(vm.portfolioChange[0],vm.dailyChangeLastVal, vm.baseChange);
           
           if (Notification.permission == "granted") {
@@ -32,7 +32,7 @@
               });
             } else {
               var notification = new Notification('Loss', {
-                icon: 'http://www.iconsdb.com/icons/preview/soylent-red/sell-2-xxl.png',
+                icon: '/static/images/sell.png',
                 body: $scope.pagetitle,
               });
             }

@@ -21,11 +21,12 @@
     vm.companyquery = null;
     vm.filters = {
       'price_by_book' : "Price/Book", 
-      'eps' : "Earning/Share", 
+      // 'eps' : "Earning/Share", 
       'p_by_e': "Price/Earning",
       'market_cap': "Market Capital",
       'div_perc' : "Dividend Percentage",
-      'put_by_call' : "Put By Call Ratio"
+      'put_by_call' : "Put By Call Ratio",
+      'p_by_e_relative': "P/E Relative"
     }
     
     vm.fields = {

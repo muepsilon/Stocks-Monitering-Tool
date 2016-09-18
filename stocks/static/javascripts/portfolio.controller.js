@@ -342,7 +342,7 @@
               };
               if(vm.notification_text_high.length > 1){
                 var notification = new Notification('Sell', {
-                  icon: 'http://www.iconsdb.com/icons/preview/soylent-red/sell-2-xxl.png',
+                  icon: '/static/images/sell.png',
                   body: vm.notification_text_high,
                 });
               }
@@ -432,7 +432,7 @@
             };
             if(vm.notification_text_high.length > 1){
               var notification = new Notification('Sell', {
-                icon: 'http://www.iconsdb.com/icons/preview/soylent-red/sell-2-xxl.png',
+                icon: '/static/images/sell.png',
                 body: vm.notification_text_high,
               });
             }

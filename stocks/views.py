@@ -13,7 +13,7 @@ from nsetools import Nse
 import nsemodule
 from django.shortcuts import get_object_or_404
 from django.core import serializers
-from stocks.models import Stock, Company, WatchStock, FinanceParams
+from stocks.models import Stock, Company, WatchStock, FinanceParams, models
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -66,7 +66,7 @@ def fetch_or_return_company_key_ratios(request):
 
 @require_http_methods(["GET"])
 def fetch_stocks(request):
-  fields = ('market_cap','p_by_e','div_perc','eps','price_by_book','put_by_call')
+  fields = ('market_cap','p_by_e','div_perc','eps','price_by_book','put_by_call','p_by_e_relative')
   params_fields = ('market_cap','book_value','p_by_e','div_perc','industry_p_by_e','eps','price_by_book','div_yield_perc','put_by_call','params_type','company')
   filter_dict = {}
   company_name_like = request.GET.get("name", None )
@@ -75,14 +75,25 @@ def fetch_stocks(request):
     value = request.GET.get(field,None)
     if value != None:
       val_list = value.split(",")
-      if len(val_list) == 3:
-        filter_dict["{0}__lte".format(field)] = float(val_list[2])
-        filter_dict["{0}__gte".format(field)] = float(val_list[1])
-      elif len(val_list) == 2:
-        if int(val_list[0]) == 1 :
+      if field == 'p_by_e_relative' :
+        field_name = 'p_by_e'
+        if len(val_list) == 3:
+          filter_dict["{0}__lte".format(field_name)] = float(val_list[2])*models.F('industry_p_by_e')
+          filter_dict["{0}__gte".format(field_name)] = float(val_list[1])*models.F('industry_p_by_e')
+        elif len(val_list) == 2:
+          if int(val_list[0]) == 1 :
+            filter_dict["{0}__gte".format(field_name)] = float(val_list[1])*models.F('industry_p_by_e')
+          else:
+            filter_dict["{0}__lte".format(field_name)] = float(val_list[1])*models.F('industry_p_by_e')
+      else:
+        if len(val_list) == 3:
+          filter_dict["{0}__lte".format(field)] = float(val_list[2])
           filter_dict["{0}__gte".format(field)] = float(val_list[1])
-        else:
-          filter_dict["{0}__lte".format(field)] = float(val_list[1])
+        elif len(val_list) == 2:
+          if int(val_list[0]) == 1 :
+            filter_dict["{0}__gte".format(field)] = float(val_list[1])
+          else:
+            filter_dict["{0}__lte".format(field)] = float(val_list[1])
   if company_name_like != None and len(company_name_like) > 0:
     filter_dict['company__name__contains'] = company_name_like
 
