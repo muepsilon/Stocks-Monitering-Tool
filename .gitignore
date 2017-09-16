@@ -2,3 +2,5 @@
 bower_components
 static_root
 stocks/migrations
+node_modules/
+*.sqlite3
